@@ -4,17 +4,17 @@ import styles from './Cta.module.css';
 
 const Cta = () => {
   return (
-    <div className={cn(styles.cta, styles['wf-section'])}>
+    <div className={cn(styles.cta, 'wf-section')}>
       <div className={styles.cta__container}>
         <h2 className={styles.cta__heading}>
           Ready to see what we’re building?
         </h2>
-        <div className={cn(styles.cta__wrapper, styles['w-form'])}>
+        <div className={cn(styles.cta__wrapper, 'w-form')}>
           <form id="email-form" name="email-form" className={styles['cta-div']}>
             <div className={styles['cta__input-wrapper']}>
               <input
                 type="email"
-                className={cn(styles.cta__input, styles['w-input'])}
+                className={cn(styles.cta__input, 'w-input')}
                 maxLength={256}
                 name="Hero-CTA-Email-2"
                 placeholder="Your email"
@@ -24,7 +24,7 @@ const Cta = () => {
               <input
                 type="submit"
                 value="Sign up"
-                className={cn(styles.cta__button, styles['w-button'])}
+                className={cn(styles.cta__button, 'w-button')}
               />
             </div>
             <div className={styles.cta__disclaimer}>
@@ -35,10 +35,10 @@ const Cta = () => {
               .
             </div>
           </form>
-          <div className={styles['w-form-done']}>
+          <div className={'w-form-done'}>
             <div>Thank you! Your submission has been received!</div>
           </div>
-          <div className={styles['w-form-fail']}>
+          <div className={'w-form-fail'}>
             <div>Oops! Something went wrong while submitting the form.</div>
           </div>
         </div>

@@ -1,31 +1,36 @@
 import Image from 'next/image';
+import cn from 'classnames';
+
+import styles from './Hero.module.css';
 
 const Hero = () => {
   return (
-    <div className="hero wf-section">
-      <div className="hero__container">
-        <div className="hero__container-inner">
-          <div className="hero__scroll-container">
-            <div className="hero__transform-target">
-              <p className="hero__intro">
+    <div className={cn(styles.hero, 'wf-section')}>
+      <div className={styles.hero__container}>
+        <div className={styles['hero__container-inner']}>
+          <div className={styles['hero__scroll-container']}>
+            <div className={styles['hero__transform-target']}>
+              <p className={styles.hero__intro}>
                 Pitch helps teams build better presentations:
                 <br />
                 collaboratively, effectively, and beautifully.
               </p>
-              <div className="hero__headline">
-                <h1 className="hero__headline-text">All hands on deck.</h1>
+              <div className={styles.hero__headline}>
+                <h1 className={styles['hero__headline-text']}>
+                  All hands on deck.
+                </h1>
                 <Image
                   src="/assets/images/hero-hands.png"
                   loading="eager"
                   alt=""
-                  className="hero__hand"
+                  className={styles.hero__hand}
                   layout="fill"
                 />
                 <Image
                   src="/assets/images/hero-ui_2808w.jpg"
                   loading="eager"
                   alt=""
-                  className="hero__ui"
+                  className={styles.hero__ui}
                   layout="fill"
                 />
               </div>
@@ -33,21 +38,21 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="hero__cta-section">
-        <h4 className="hero__cta-heading">
+      <div className={styles['hero__cta-section']}>
+        <h4 className={styles['hero__cta-heading']}>
           Want to get early access and product updates?
         </h4>
-        <div className="hero__cta-wrapper w-form">
+        <div className={cn(styles['hero__cta-wrapper'], 'w-form')}>
           <form
             id="email-form"
             name="email-form"
             data-name="Email Form"
-            className="hero__cta-div"
+            className={styles['hero__cta-div']}
           >
-            <div className="hero__cta-inputwrapper">
+            <div className={styles['hero__cta-inputwrapper']}>
               <input
                 type="email"
-                className="hero__cta-input w-input"
+                className={cn(styles['hero__cta-input'], 'w-input')}
                 maxLength={256}
                 name="Hero-CTA-Email"
                 data-name="Hero CTA Email"
@@ -59,12 +64,12 @@ const Hero = () => {
                 type="submit"
                 value="Sign up"
                 data-wait="Please wait..."
-                className="hero__cta-button w-button"
+                className={cn(styles['hero__cta-button'], 'w-button')}
               />
             </div>
-            <div className="hero__cta-disclaimer">
+            <div className={styles['hero__cta-disclaimer']}>
               We care about protecting your data. Here’s our{' '}
-              <a href="#" className="hero__cta-disclamer-link">
+              <a href="#" className={styles['hero__cta-disclamer-link']}>
                 Privacy Policy
               </a>
               .
