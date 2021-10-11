@@ -1,0 +1,152 @@
+.sharing {
+    display: block;
+    overflow: hidden;
+    padding-top: 113px;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sharing__text {
+    width: 565px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sharing__text-heading {
+    margin-bottom: 46px;
+    opacity: 0;
+    transform: translate(0px, 100px);
+    text-align: center;
+}
+
+.sharing__text-paragraph {
+    opacity: 0;
+    transform: translate(0px, 100px);
+    text-align: center;
+}
+
+.sharing__wrapper {
+    position: relative;
+    display: flex;
+    max-width: 100em;
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sharing__image {
+    width: 100%;
+}
+
+.sharing__hand {
+    position: absolute;
+    left: 14%;
+    bottom: 0px;
+    width: 22%;
+}
+
+.sharing__access {
+    position: absolute;
+    left: 0px;
+    top: 25%;
+    width: 30%;
+}
+
+.sharing__invite {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    width: 30%;
+}
+
+.sharing__plane-wrapper {
+    position: absolute;
+    top: -72px;
+    right: 77px;
+    width: 40%;
+}
+
+.sharing__plane {
+    position: relative;
+    z-index: 1;
+}
+
+.sharing__plane-shadow {
+    position: absolute;
+    right: 57px;
+    bottom: 123px;
+    display: none;
+}
+
+@media screen and (min-width: 1280px) {
+    .sharing__wrapper {
+        max-width: 86em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sharing__image {
+        width: 1198px;
+    }
+
+    .sharing__hand {
+        left: 167px;
+        width: 274px;
+    }
+
+    .sharing__access {
+        left: 22px;
+        top: 157px;
+        width: 335px;
+    }
+
+    .sharing__invite {
+        top: 317px;
+        right: 9px;
+        width: 362px;
+    }
+
+    .sharing__plane-wrapper {
+        width: auto;
+    }
+
+    .sharing__plane {
+        width: 396px;
+    }
+
+    .sharing__plane-shadow {
+        right: 57px;
+        bottom: 53px;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .sharing {
+        padding-top: 60px;
+    }
+
+    .sharing__text {
+        width: 80%;
+    }
+
+    .sharing__plane-wrapper {
+        right: 20px;
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .sharing__text {
+        margin-bottom: 40px;
+    }
+
+    .sharing__text-heading {
+        font-size: 2.6em;
+    }
+}

@@ -1,0 +1,116 @@
+.formatting {
+    display: block;
+    overflow: hidden;
+    padding-top: 93px;
+    padding-right: 4vw;
+    padding-left: 4vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formatting__text {
+    position: relative;
+    width: 525px;
+    margin-right: 4vw;
+    margin-left: -15px;
+    padding-top: 66px;
+    padding-bottom: 180px;
+}
+
+.formatting__lottie {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 0;
+    width: 75em;
+    height: auto;
+    margin-left: -24.8em;
+}
+
+.formatting__wrapper {
+    position: relative;
+    display: flex;
+    max-width: 77em;
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.formatting__heading {
+    margin-bottom: 46px;
+}
+
+.formatting__paragraph.intro__workflow-paragraph--space {
+    margin-bottom: 18px;
+}
+
+.formatting__paragraph.formatting__paragraph--space {
+    margin-bottom: 18px;
+}
+
+@media screen and (min-width: 1280px) {
+    .formatting {
+        display: block;
+        padding-right: 9vw;
+        padding-left: 7vw;
+    }
+
+    .formatting__wrapper {
+        max-width: 80em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .formatting {
+        padding-right: 11vw;
+        padding-left: 8vw;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .formatting {
+        padding-top: 60px;
+    }
+
+    .formatting__text {
+        width: 100%;
+        margin-right: 0vw;
+        margin-left: 0px;
+        padding-bottom: 0px;
+    }
+
+    .formatting__lottie {
+        position: static;
+        width: 90vw;
+        margin-left: 0em;
+    }
+
+    .formatting__wrapper {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formatting__heading {
+        text-align: center;
+    }
+
+    .formatting__paragraph {
+        text-align: center;
+    }
+
+    .formatting__paragraph.formatting__paragraph--space {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .formatting__heading {
+        font-size: 2.6em;
+    }
+}

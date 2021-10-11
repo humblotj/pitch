@@ -1,0 +1,128 @@
+.decks {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    height: 67vh;
+    padding-top: 154px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+
+.decks__text {
+    width: 526px;
+    margin-bottom: 40px;
+}
+
+.decks__text-heading {
+    margin-bottom: 46px;
+    opacity: 0;
+    transform: translate(0px, 100px);
+    text-align: center;
+}
+
+.decks__text-paragraph {
+    opacity: 0;
+    transform: translate(0px, 100px);
+    text-align: center;
+}
+
+.decks__wrapper {
+    display: flex;
+    width: 120vw;
+    justify-content: center;
+    align-items: flex-start;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.decks__overlay {
+    position: absolute;
+    left: 0%;
+    top: auto;
+    right: 0%;
+    bottom: 0%;
+    z-index: 1;
+    height: 116px;
+    background-image: linear-gradient(180deg, hsla(0, 0%, 96.5%, 0), rgba(43, 42, 53, 0.2));
+}
+
+.decks__grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.decks__grid.decks__grid--margin {
+    margin-right: 1vw;
+}
+
+.decks__image {
+    width: 15.5vw;
+    border-radius: 4px;
+    box-shadow: 0 24px 24px 0 rgba(0, 0, 0, 0.04), 0 16px 24px 0 rgba(0, 0, 0, 0.06), 0 4px 8px 0 rgba(0, 0, 0, 0.12),
+        0 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.decks__image.decks__image--margin {
+    margin-bottom: 1.5vh;
+}
+
+@media screen and (min-width: 1280px) {
+    .decks {
+        height: 100vh;
+    }
+
+    .decks__text {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .decks {
+        height: 50vh;
+        padding-top: 60px;
+    }
+
+    .decks__text {
+        width: 80%;
+    }
+
+    .decks__wrapper {
+        transform: translate(0px, -24px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .decks {
+        height: 70vh;
+    }
+
+    .decks__text {
+        width: 90%;
+    }
+
+    .decks__text-heading {
+        font-size: 2.6em;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .decks__wrapper {
+        width: 180vw;
+    }
+
+    .decks__grid.decks__grid--margin {
+        margin-right: 2vw;
+    }
+
+    .decks__image {
+        width: 30vw;
+    }
+
+    .decks__image.decks__image--margin {
+        margin-bottom: 1vh;
+    }
+}

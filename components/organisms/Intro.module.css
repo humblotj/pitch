@@ -1,0 +1,199 @@
+.intro {
+    display: flex;
+    overflow: hidden;
+    padding: 100px 4vw 75px;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(180deg, #f6f6f6, #fff 30%);
+}
+
+.intro__logos {
+    margin-bottom: 136px;
+}
+
+.intro__logos-heading {
+    margin-top: 0px;
+    margin-bottom: 70px;
+    font-family: Eina, sans-serif;
+    color: #545465;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.intro__logos-wrapper {
+    height: 56px;
+}
+
+.intro__logo.intro__logo--rmargin {
+    margin-right: 40px;
+}
+
+.intro__workflow {
+    position: relative;
+    display: flex;
+    max-width: 80em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.intro__workflow-text {
+    width: 50%;
+}
+
+.intro__workflow-heading {
+    margin-bottom: 46px;
+    opacity: 0;
+    transform: translate(0px, 100px);
+}
+
+.intro__workflow-paragraph {
+    opacity: 0;
+    transform: translate(0px, 100px);
+}
+
+.intro__workflow-paragraph.intro__workflow-paragraph--space {
+    margin-bottom: 18px;
+}
+
+.intro__workflow-lottie {
+    position: static;
+    left: auto;
+    top: auto;
+    right: 0%;
+    bottom: 0%;
+    z-index: 2;
+    margin-right: -20px;
+    margin-bottom: 0px;
+    flex: 0 0 50em;
+}
+
+@media screen and (min-width: 1280px) {
+    .intro {
+        display: block;
+        padding-right: 10vw;
+        padding-left: 10vw;
+        align-items: stretch;
+    }
+
+    .intro__logos {
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+    }
+
+    .intro__logo.intro__logo--rmargin {
+        margin-right: 80px;
+    }
+
+    .intro__workflow {
+        max-width: 100em;
+        margin-right: auto;
+        margin-left: auto;
+        flex-direction: row;
+    }
+
+    .intro__workflow-text {
+        width: 525px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .intro__workflow-lottie {
+        flex-basis: 55em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .intro {
+        padding-bottom: 0px;
+    }
+
+    .intro__logos-wrapper {
+        display: grid;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        justify-items: center;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        grid-auto-columns: 1fr;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .intro__logo.intro__logo--rmargin {
+        margin-right: 0px;
+    }
+
+    .intro__workflow {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .intro__workflow-text {
+        width: 100%;
+    }
+
+    .intro__workflow-heading {
+        font-size: 3.2em;
+        line-height: 1em;
+        text-align: center;
+    }
+
+    .intro__workflow-paragraph {
+        text-align: center;
+    }
+
+    .intro__workflow-lottie {
+        width: 90vw;
+        margin-right: 0px;
+        flex: 0 0 auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .intro__logos {
+        margin-bottom: 60px;
+    }
+
+    .intro__logos-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .intro__logo.intro__logo--rmargin {
+        margin-bottom: 24px;
+    }
+
+    .intro__workflow-text {
+        margin-bottom: 20px;
+    }
+
+    .intro__workflow-heading {
+        font-size: 2.6em;
+    }
+
+    .intro__workflow-lottie {
+        width: 60em;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .intro__workflow-lottie {
+        width: 25em;
+    }
+}
