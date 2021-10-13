@@ -16,13 +16,13 @@ const Testimonials = () => {
               all in one — plus things that none of these have!
             </div>
             <div className={styles['testimonials__card-info']}>
-              <Image
+              <img
                 src="/rahul.jpg"
                 loading="lazy"
                 alt=""
                 className={styles['testimonials__card-photo']}
-                width="120"
-                height="120"
+                // width="120"
+                // height="120"
               />
               <h4 className={styles['testimonials__card-heading']}>
                 Rahul Vohra
@@ -41,13 +41,13 @@ const Testimonials = () => {
               a modern team, this product is indispensable.
             </div>
             <div className={styles['testimonials__card-info']}>
-              <Image
+              <img
                 src="/aidan.jpg"
                 loading="lazy"
                 alt=""
                 className={styles['testimonials__card-photo']}
-                width="120"
-                height="120"
+                // width="120"
+                // height="120"
               />
               <h4 className={styles['testimonials__card-heading']}>
                 Aidan Hornsby
@@ -65,13 +65,13 @@ const Testimonials = () => {
               design team supporting me.
             </div>
             <div className={styles['testimonials__card-info']}>
-              <Image
+              <img
                 src="/shane.jpg"
                 loading="lazy"
                 alt=""
                 className={styles['testimonials__card-photo']}
-                width="120"
-                height="120"
+                // width="120"
+                // height="120"
               />
               <h4 className={styles['testimonials__card-heading']}>
                 Shane Parrish

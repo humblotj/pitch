@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="preload"
           href="/fonts/eina-bold.woff2"
@@ -28,6 +29,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           crossOrigin=""
           type="font/woff2"
         />
+
+        <meta httpEquiv="pragma" content="no-cache" />
+        <meta
+          httpEquiv="cache-control"
+          content="no-cache, no-store, must-revalidate"
+        />
+
+        <meta name="robots" content="noindex"></meta>
       </Head>
       <Component {...pageProps} />
     </>
