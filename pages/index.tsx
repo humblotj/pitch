@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 
 import Cta from '../components/organisms/Cta';
 import Decks from '../components/organisms/Decks';
@@ -15,6 +16,29 @@ import Testimonials from '../components/organisms/Testimonials';
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <link
+          rel="preload"
+          href="/fonts/eina-bold.woff2"
+          as="font"
+          crossOrigin=""
+          type="font/woff2"
+        />
+        <link
+          rel="preload"
+          href="/fonts/eina-regular.woff2"
+          as="font"
+          crossOrigin=""
+          type="font/woff2"
+        />
+        <link
+          rel="preload"
+          href="/fonts/markpro-heavy-1.woff2"
+          as="font"
+          crossOrigin=""
+          type="font/woff2"
+        />
+      </Head>
       <Nav />
       <Hero />
       <Intro />

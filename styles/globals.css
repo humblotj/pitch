@@ -19,7 +19,7 @@ body {
 
 @font-face {
   font-family: "Eina";
-  src: url("../assets/fonts/eina-bold.woff2") format("woff2");
+  src: url("/fonts/eina-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -27,7 +27,7 @@ body {
 
 @font-face {
   font-family: "Eina";
-  src: url("../assets/fonts/eina-regular.woff2") format("woff2");
+  src: url("/fonts/eina-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -35,7 +35,7 @@ body {
 
 @font-face {
   font-family: "Markpro";
-  src: url("../assets/fonts/markpro-heavy-1.woff2") format("woff2");
+  src: url("/fonts/markpro-heavy-1.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
