@@ -4,10 +4,29 @@ import cn from 'classnames';
 import styles from './News.module.css';
 
 import CardButtonarrow from '../../assets/icons/card-buttonarrow.svg';
+import { useEffect, useRef } from 'react';
+import useAnimation from '../../hooks/useAnimation';
 
 const News = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { timeline } = useAnimation(ref, true);
+
+  useEffect(() => {
+    const tl = timeline({ start: 10, once: true });
+    tl.to('.' + styles.news__card + ':nth-child(1)', {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+    });
+    tl.to('.' + styles.news__card + ':nth-child(2)', {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+    });
+  }, []);
+
   return (
-    <div className={cn(styles.news, 'wf-section')}>
+    <div ref={ref} className={cn(styles.news, 'wf-section')}>
       <div className={styles.news__wrapper}>
         <div className={styles.news__card}>
           <div className={styles['news__card-content']}>

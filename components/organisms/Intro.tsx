@@ -9,7 +9,7 @@ import collaborationLottie from '../../assets/lottie/collaboration.json';
 const Intro = () => {
   const workflowRef = useRef<HTMLDivElement>(null);
   const lottieRef = useRef<HTMLDivElement>(null);
-  const { animateTo } = useAnimation(workflowRef, true);
+  const { timeline } = useAnimation(workflowRef, true);
   const { loadAnimation, lottieAnimate } = useAnimation(lottieRef, true);
 
   useEffect(() => {
@@ -19,17 +19,17 @@ const Intro = () => {
       return;
     }
 
-    animateTo(styles['intro__workflow-heading'], {
-      to: { opacity: 1, y: 0 },
-      start: 10,
-      duration: 0.1,
-      once: true,
-    });
-    animateTo(styles['intro__workflow-paragraph'], {
-      to: { opacity: 1, y: 0 },
-      start: 10,
+    const tl = timeline({ start: 10, once: true });
+
+    tl.to('.' + styles['intro__workflow-heading'], {
+      opacity: 1,
+      y: 0,
       duration: 0.3,
-      once: true,
+    });
+    tl.to('.' + styles['intro__workflow-paragraph'], {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
     });
 
     const collaborationAnimation = loadAnimation(collaborationLottie);

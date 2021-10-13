@@ -1,10 +1,31 @@
+import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 
 import styles from './Formating.module.css';
+import useAnimation from '../../hooks/useAnimation';
+import snapLottie from '../../assets/lottie/snap.json';
 
 const Formating = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { animateTo, loadAnimation, lottieAnimate } = useAnimation(ref, true);
+
+  useEffect(() => {
+    animateTo(styles.formatting__text + '> *', {
+      to: { x: 0 },
+      duration: 1.2,
+      scrub: false,
+      toggleActions: 'play none none reset',
+    });
+
+    const snapAnimation = loadAnimation(snapLottie, styles.formatting__lottie);
+    lottieAnimate(snapAnimation, {
+      duration: 1,
+      scrub: false,
+    });
+  }, []);
+
   return (
-    <div className={cn(styles.formatting, 'wf-section')}>
+    <div ref={ref} className={cn(styles.formatting, 'wf-section')}>
       <div className={styles.formatting__wrapper}>
         <div className={styles.formatting__lottie}></div>
         <div className={styles.formatting__text}>

@@ -10,10 +10,6 @@ const Hero = () => {
   const { animateFromTo, animateTo } = useAnimation(ref);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) {
-      return;
-    }
     animateTo(styles.hero__ui, { to: { opacity: 1 }, start: 0, end: 17 });
     animateFromTo(styles['hero__transform-target'], {
       from: { x: '0.054%', y: 0, scale: 1 },

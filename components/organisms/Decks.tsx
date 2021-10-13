@@ -2,11 +2,75 @@ import Image from 'next/image';
 import cn from 'classnames';
 
 import styles from './Decks.module.css';
+import { useEffect, useRef } from 'react';
+import useAnimation from '../../hooks/useAnimation';
 
 const Decks = () => {
+  const decksTextRef = useRef<HTMLDivElement>(null);
+  const decksWrapperRef = useRef<HTMLDivElement>(null);
+  const { timeline } = useAnimation(decksTextRef, true);
+  const { animateFromTo } = useAnimation(decksWrapperRef, true);
+
+  useEffect(() => {
+    const tl = timeline({ start: 10, once: true });
+    tl.to('.' + styles['decks__text-heading'], {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+    });
+    tl.to('.' + styles['decks__text-paragraph'], {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+    });
+
+    animateFromTo(styles.decks__grid + ':nth-child(1)', {
+      from: { y: 196 },
+      to: { y: -178 },
+      start: 0,
+      end: 80,
+    });
+    animateFromTo(styles.decks__grid + ':nth-child(2)', {
+      from: { y: 317 },
+      to: { y: -109 },
+      start: 0,
+      end: 100,
+    });
+    animateFromTo(styles.decks__grid + ':nth-child(3)', {
+      from: { y: 317 },
+      to: { y: -109 },
+      start: 0,
+      end: 80,
+    });
+    animateFromTo(styles.decks__grid + ':nth-child(4)', {
+      from: { y: 230 },
+      to: { y: -117 },
+      start: 0,
+      end: 100,
+    });
+    animateFromTo(styles.decks__grid + ':nth-child(5)', {
+      from: { y: 213 },
+      to: { y: -152 },
+      start: 0,
+      end: 80,
+    });
+    animateFromTo(styles.decks__grid + ':nth-child(6)', {
+      from: { y: 196 },
+      to: { y: -117 },
+      start: 0,
+      end: 100,
+    });
+    animateFromTo(styles.decks__grid + ':nth-child(7)', {
+      from: { y: 230 },
+      to: { y: -178 },
+      start: 0,
+      end: 80,
+    });
+  }, []);
+
   return (
     <div className={cn(styles.decks, 'wf-section')}>
-      <div className={styles.decks__text}>
+      <div ref={decksTextRef} className={styles.decks__text}>
         <h2 className={styles['decks__text-heading']}>
           From draft to deck in no time
         </h2>
@@ -16,7 +80,7 @@ const Decks = () => {
           presentations look great and stay on brand.
         </p>
       </div>
-      <div className={styles.decks__wrapper}>
+      <div ref={decksWrapperRef} className={styles.decks__wrapper}>
         <div className={cn(styles.decks__grid, styles['decks__grid--margin'])}>
           <Image
             src="/slide01_720w.png"

@@ -1,12 +1,47 @@
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import cn from 'classnames';
 
 import styles from './Sharing.module.css';
+import useAnimation from '../../hooks/useAnimation';
 
 const Sharing = () => {
+  const sharingTextRef = useRef<HTMLDivElement>(null);
+  const sharingPlaneWrapperRef = useRef<HTMLDivElement>(null);
+  const { timeline } = useAnimation(sharingTextRef, true);
+  const { animateFromTo } = useAnimation(sharingPlaneWrapperRef, true);
+
+  useEffect(() => {
+    const tl = timeline({ start: 10, once: true });
+
+    tl.to('.' + styles['sharing__text-heading'], {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+    });
+    tl.to('.' + styles['sharing__text-paragraph'], {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+    });
+
+    animateFromTo(styles.sharing__plane, {
+      from: { x: -143, y: 100 },
+      to: { x: 126, y: -74 },
+      start: 0,
+      end: 100,
+    });
+    animateFromTo(styles['sharing__plane-shadow'], {
+      from: { x: -83 },
+      to: { x: 4 },
+      start: 0,
+      end: 59,
+    });
+  }, []);
+
   return (
     <div className={cn(styles.sharing, 'wf-section')}>
-      <div className={styles.sharing__text}>
+      <div ref={sharingTextRef} className={styles.sharing__text}>
         <h2 className={styles['sharing__text-heading']}>
           Ideas that can go anywhere
         </h2>
@@ -17,49 +52,52 @@ const Sharing = () => {
         </p>
       </div>
       <div className={styles.sharing__wrapper}>
-        <div className={styles['sharing__plane-wrapper']}>
-          <Image
+        <div
+          ref={sharingPlaneWrapperRef}
+          className={styles['sharing__plane-wrapper']}
+        >
+          <img
             src="/plane_800w.png"
             alt=""
             className={styles.sharing__plane}
-            width="800"
-            height="601"
+            // width="800"
+            // height="601"
           />
-          <Image
+          <img
             src="/shadow.png"
             alt=""
             className={styles['sharing__plane-shadow']}
-            width="120"
-            height="60"
+            // width="120"
+            // height="60"
           />
         </div>
-        <Image
-          src="/invite2x.png"
+        <img
+          src="/invite@2x.png"
           alt=""
           className={styles.sharing__invite}
-          width="800"
-          height="412"
+          //   width="800"
+          //   height="412"
         />
-        <Image
+        <img
           src="/access.svg"
           alt=""
           className={styles.sharing__access}
-          width="382"
-          height="115"
+          //   width="382"
+          //   height="115"
         />
-        <Image
+        <img
           src="/hand_600w.png"
           alt=""
           className={styles.sharing__hand}
-          width="600"
-          height="748"
+          //   width="600"
+          //   height="748"
         />
-        <Image
+        <img
           src="/tablet_2400w.jpg"
           alt=""
           className={styles.sharing__image}
-          width="2400"
-          height="1202"
+          //   width="2400"
+          //   height="1202"
         />
       </div>
     </div>

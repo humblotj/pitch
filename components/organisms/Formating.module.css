@@ -41,14 +41,17 @@
 
 .formatting__heading {
     margin-bottom: 46px;
+    transform: translateX(-170px);
 }
 
 .formatting__paragraph.intro__workflow-paragraph--space {
     margin-bottom: 18px;
+    transform: translateX(-44px);
 }
 
 .formatting__paragraph.formatting__paragraph--space {
     margin-bottom: 18px;
+    transform: translateX(170px);
 }
 
 @media screen and (min-width: 1280px) {

@@ -16,8 +16,6 @@ const useAnimation = (
         return;
       }
 
-      console.log(element.querySelector('*'));
-
       return lottie.loadAnimation({
         container: (className
           ? element.querySelector('.' + className)
@@ -31,34 +29,6 @@ const useAnimation = (
     [],
   );
 
-  const enterLeaveTrigger = useCallback(
-    (leave: string, enter?: string) => {
-      const element = ref.current;
-      if (!element) {
-        return;
-      }
-
-      const animationStart = animationStartEntering ? 'top bottom' : 'top top';
-      const animationEnd = 'bottom bottom';
-
-      ScrollTrigger.create({
-        trigger: element,
-        scrub: true,
-        start: animationStart,
-        end: animationEnd,
-        onLeave: () => {
-          gsap.set(document.querySelectorAll(leave), { opacity: 0 });
-        },
-        onEnter: () => {
-          if (enter) {
-            gsap.set(document.querySelectorAll(enter), { opacity: 1 });
-          }
-        },
-      });
-    },
-    [ref, animationStartEntering],
-  );
-
   const lottieAnimate = useCallback(
     (
       animation: AnimationItem | undefined,
@@ -67,11 +37,15 @@ const useAnimation = (
         end = 0,
         duration,
         once = false,
+        scrub = true,
+        loop = false,
       }: {
         start?: number;
         end?: number;
         duration?: number;
         once?: boolean;
+        scrub?: boolean;
+        loop?: boolean;
       },
     ) => {
       const element = ref.current;
@@ -93,12 +67,15 @@ const useAnimation = (
 
       ScrollTrigger.create({
         trigger: element,
-        scrub: !once,
+        scrub: scrub && !once,
         start: animationStart,
         end: animationEnd,
         once,
-        onUpdate: (self) => {
-          animation.play();
+        onEnter: () => {
+          if (loop) {
+            animation.loop = true;
+          }
+          animation.goToAndPlay(0);
         },
       });
     },
@@ -162,6 +139,8 @@ const useAnimation = (
         duration,
         immediateRender = true,
         once = false,
+        scrub = true,
+        toggleActions = undefined,
       }: {
         to: gsap.TweenVars;
         start?: number;
@@ -169,6 +148,8 @@ const useAnimation = (
         duration?: number;
         immediateRender?: boolean;
         once?: boolean;
+        scrub?: boolean;
+        toggleActions?: string;
       },
     ) => {
       const element = ref.current;
@@ -188,15 +169,16 @@ const useAnimation = (
           }`
         : `+=${element.offsetHeight * ((Math.min(end, start) - start) / 100)}`;
 
-      gsap.to(element.querySelectorAll('.' + className), {
+      return gsap.to(element.querySelectorAll('.' + className), {
         ...to,
         immediateRender,
         scrollTrigger: {
           trigger: element,
-          scrub: !once,
+          scrub: scrub && !once,
           start: animationStart,
           end: animationEnd,
           once,
+          toggleActions,
         },
         duration,
       });
@@ -204,12 +186,49 @@ const useAnimation = (
     [ref, animationStartEntering],
   );
 
+  const timeline = useCallback(
+    ({
+      start = 0,
+      end = 0,
+      once = false,
+    }: {
+      start?: number;
+      end?: number;
+      once?: boolean;
+    }) => {
+      const element = ref.current || document.body;
+
+      const animationStart = animationStartEntering
+        ? `${
+            (element.offsetHeight + window.innerHeight) * (start / 100)
+          } bottom`
+        : `${start}% ${start}%`;
+      const animationEnd = animationStartEntering
+        ? `+=${
+            (element.offsetHeight + window.innerHeight) *
+            ((Math.min(end, start) - start) / 100)
+          }`
+        : `+=${element.offsetHeight * ((Math.min(end, start) - start) / 100)}`;
+
+      return gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          scrub: !once,
+          start: animationStart,
+          end: animationEnd,
+          once,
+        },
+      });
+    },
+    [ref, animationStartEntering],
+  );
+
   return {
-    enterLeaveTrigger,
     loadAnimation,
     lottieAnimate,
     animateFromTo,
     animateTo,
+    timeline,
   };
 };
 
