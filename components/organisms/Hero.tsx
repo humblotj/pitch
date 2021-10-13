@@ -20,18 +20,20 @@ const Hero = () => {
                   All hands on deck.
                 </h1>
                 <Image
-                  src="/assets/images/hero-hands.png"
+                  src="/hero-hands.png"
                   loading="eager"
                   alt=""
                   className={styles.hero__hand}
-                  layout="fill"
+                  width="3840"
+                  height="2160"
                 />
                 <Image
-                  src="/assets/images/hero-ui_2808w.jpg"
+                  src="/hero-ui_2808w.jpg"
                   loading="eager"
                   alt=""
                   className={styles.hero__ui}
-                  layout="fill"
+                  width="2808"
+                  height="1701"
                 />
               </div>
             </div>

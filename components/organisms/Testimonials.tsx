@@ -17,11 +17,12 @@ const Testimonials = () => {
             </div>
             <div className={styles['testimonials__card-info']}>
               <Image
-                layout="fill"
-                src="/assets/images/rahul.jpg"
+                src="/rahul.jpg"
                 loading="lazy"
                 alt=""
                 className={styles['testimonials__card-photo']}
+                width="120"
+                height="120"
               />
               <h4 className={styles['testimonials__card-heading']}>
                 Rahul Vohra
@@ -41,11 +42,12 @@ const Testimonials = () => {
             </div>
             <div className={styles['testimonials__card-info']}>
               <Image
-                layout="fill"
-                src="/assets/images/aidan.jpg"
+                src="/aidan.jpg"
                 loading="lazy"
                 alt=""
                 className={styles['testimonials__card-photo']}
+                width="120"
+                height="120"
               />
               <h4 className={styles['testimonials__card-heading']}>
                 Aidan Hornsby
@@ -64,11 +66,12 @@ const Testimonials = () => {
             </div>
             <div className={styles['testimonials__card-info']}>
               <Image
-                layout="fill"
-                src="/assets/images/shane.jpg"
+                src="/shane.jpg"
                 loading="lazy"
                 alt=""
                 className={styles['testimonials__card-photo']}
+                width="120"
+                height="120"
               />
               <h4 className={styles['testimonials__card-heading']}>
                 Shane Parrish

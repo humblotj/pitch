@@ -19,41 +19,47 @@ const Sharing = () => {
       <div className={styles.sharing__wrapper}>
         <div className={styles['sharing__plane-wrapper']}>
           <Image
-            layout="fill"
-            src="/assets/images/plane_800w.png"
+            src="/plane_800w.png"
             alt=""
             className={styles.sharing__plane}
+            width="800"
+            height="601"
           />
           <Image
-            layout="fill"
-            src="/assets/images/shadow_1shadow.png"
+            src="/shadow.png"
             alt=""
             className={styles['sharing__plane-shadow']}
+            width="120"
+            height="60"
           />
         </div>
         <Image
-          layout="fill"
-          src="/assets/images/invite2x.png"
+          src="/invite2x.png"
           alt=""
           className={styles.sharing__invite}
+          width="800"
+          height="412"
         />
         <Image
-          layout="fill"
-          src="/assets/images/access.svg"
+          src="/access.svg"
           alt=""
           className={styles.sharing__access}
+          width="382"
+          height="115"
         />
         <Image
-          layout="fill"
-          src="/assets/images/hand_600w.png"
+          src="/hand_600w.png"
           alt=""
           className={styles.sharing__hand}
+          width="600"
+          height="748"
         />
         <Image
-          layout="fill"
-          src="/assets/images/tablet_2400w.jpg"
+          src="/tablet_2400w.jpg"
           alt=""
           className={styles.sharing__image}
+          width="2400"
+          height="1202"
         />
       </div>
     </div>

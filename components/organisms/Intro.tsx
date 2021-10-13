@@ -10,34 +10,39 @@ const Intro = () => {
         <h5 className={styles['intro__logos-heading']}>Used by teams like</h5>
         <div className={styles['intro__logos-wrapper']}>
           <Image
-            src="/assets/images/superhuman_1.svg"
+            src="/superhuman_1.svg"
             alt=""
             className={styles['intro__logo intro__logo--rmargin']}
-            layout="fill"
+            width="209"
+            height="16"
           />
           <Image
-            src="/assets/images/eyeEm.svg"
+            src="/eyeEm.svg"
             alt=""
             className={styles['intro__logo intro__logo--rmargin']}
-            layout="fill"
+            width="97"
+            height="33"
           />
           <Image
-            src="/assets/images/chart-mogul.svg"
+            src="/chart-mogul.svg"
             alt=""
             className={styles['intro__logo intro__logo--rmargin']}
-            layout="fill"
+            width="140"
+            height="26"
           />
           <Image
-            src="/assets/images/notion.svg"
+            src="/notion.svg"
             alt=""
             className={styles['intro__logo intro__logo--rmargin']}
-            layout="fill"
+            width="53"
+            height="56"
           />
           <Image
-            src="/assets/images/dashdash.svg"
+            src="/dashdash.svg"
             alt=""
             className={styles.intro__logo}
-            layout="fill"
+            width="149"
+            height="19"
           />
         </div>
       </div>
