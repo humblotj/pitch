@@ -189,6 +189,7 @@
     max-width: none;
     margin-top: -3.75em;
     margin-left: -8.75em;
+    opacity: 0;
 }
 
 @media screen and (min-width: 1280px) {

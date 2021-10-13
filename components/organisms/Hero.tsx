@@ -2,12 +2,31 @@ import Image from 'next/image';
 import cn from 'classnames';
 
 import styles from './Hero.module.css';
+import { useEffect, useRef } from 'react';
+import useAnimation from '../../hooks/useAnimation';
 
 const Hero = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { animateFromTo, animateTo } = useAnimation(ref);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) {
+      return;
+    }
+    animateTo(styles.hero__ui, { to: { opacity: 1 }, start: 0, end: 17 });
+    animateFromTo(styles['hero__transform-target'], {
+      from: { x: '0.054%', y: 0, scale: 1 },
+      to: { x: '2%', y: 60, scale: 0.519937 },
+      start: 0,
+      end: 37,
+    });
+  }, []);
+
   return (
     <div className={cn(styles.hero, 'wf-section')}>
       <div className={styles.hero__container}>
-        <div className={styles['hero__container-inner']}>
+        <div ref={ref} className={styles['hero__container-inner']}>
           <div className={styles['hero__scroll-container']}>
             <div className={styles['hero__transform-target']}>
               <p className={styles.hero__intro}>
@@ -19,7 +38,7 @@ const Hero = () => {
                 <h1 className={styles['hero__headline-text']}>
                   All hands on deck.
                 </h1>
-                <Image
+                <img
                   src="/hero-hands.png"
                   loading="eager"
                   alt=""
@@ -27,7 +46,7 @@ const Hero = () => {
                   width="3840"
                   height="2160"
                 />
-                <Image
+                <img
                   src="/hero-ui_2808w.jpg"
                   loading="eager"
                   alt=""
