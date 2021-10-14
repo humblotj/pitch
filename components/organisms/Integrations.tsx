@@ -29,7 +29,6 @@ const Integrations = () => {
     lottieAnimate(integrationsAnimation, {
       duration: 3.8,
       once: true,
-      loop: true,
     });
   }, []);
 

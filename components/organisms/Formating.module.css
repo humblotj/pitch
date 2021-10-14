@@ -44,8 +44,7 @@
     transform: translateX(-170px);
 }
 
-.formatting__paragraph.intro__workflow-paragraph--space {
-    margin-bottom: 18px;
+.formatting__paragraph:last-child {
     transform: translateX(-44px);
 }
 

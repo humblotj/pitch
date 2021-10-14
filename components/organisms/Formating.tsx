@@ -15,12 +15,14 @@ const Formating = () => {
       duration: 1.2,
       scrub: false,
       toggleActions: 'play none none reset',
+      delay: 1,
     });
 
     const snapAnimation = loadAnimation(snapLottie, styles.formatting__lottie);
     lottieAnimate(snapAnimation, {
       duration: 1,
       scrub: false,
+      delay: 1,
     });
   }, []);
 

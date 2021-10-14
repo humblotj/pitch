@@ -1,4 +1,4 @@
-import { RefObject, useCallback } from 'react';
+import { RefObject, useCallback, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import lottie, { AnimationItem } from 'lottie-web';
@@ -7,6 +7,8 @@ const useAnimation = (
   ref: RefObject<HTMLDivElement>,
   animationStartEntering = false,
 ) => {
+  const timerRef = useRef<any>(null);
+
   const loadAnimation = useCallback(
     (animationData: any, className?: string) => {
       const element = ref.current;
@@ -37,6 +39,7 @@ const useAnimation = (
         once = false,
         scrub = true,
         loop = false,
+        delay = 0,
       }: {
         start?: number;
         end?: number;
@@ -44,11 +47,16 @@ const useAnimation = (
         once?: boolean;
         scrub?: boolean;
         loop?: boolean;
+        delay?: number;
       },
     ) => {
       const element = ref.current;
       if (!element || !animation) {
         return;
+      }
+
+      if (loop) {
+        animation.loop = true;
       }
 
       const animationStart = animationStartEntering
@@ -70,10 +78,10 @@ const useAnimation = (
         end: animationEnd,
         once,
         onEnter: () => {
-          if (loop) {
-            animation.loop = true;
-          }
-          animation.goToAndPlay(0);
+          clearTimeout(timerRef.current);
+          timerRef.current = setTimeout(() => {
+            animation.goToAndPlay(0);
+          }, delay * 1000);
         },
       });
     },
@@ -139,16 +147,19 @@ const useAnimation = (
         once = false,
         scrub = true,
         toggleActions = undefined,
-      }: {
-        to: gsap.TweenVars;
-        start?: number;
-        end?: number;
-        duration?: number;
-        immediateRender?: boolean;
-        once?: boolean;
-        scrub?: boolean;
-        toggleActions?: string;
-      },
+        ...rest
+      }:
+        | {
+            to: gsap.TweenVars;
+            start?: number;
+            end?: number;
+            duration?: number;
+            immediateRender?: boolean;
+            once?: boolean;
+            scrub?: boolean;
+            toggleActions?: string;
+          }
+        | gsap.TweenVars,
     ) => {
       const element = ref.current;
       if (!element) {
@@ -179,6 +190,7 @@ const useAnimation = (
           toggleActions,
         },
         duration,
+        ...rest,
       });
     },
     [ref, animationStartEntering],
