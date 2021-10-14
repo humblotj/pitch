@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import cn from 'classnames';
 
 import styles from './Sharing.module.css';

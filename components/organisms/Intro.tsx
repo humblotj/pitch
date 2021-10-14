@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import cn from 'classnames';
 
 import styles from './Intro.module.css';
@@ -13,12 +13,6 @@ const Intro = () => {
   const { loadAnimation, lottieAnimate } = useAnimation(lottieRef, true);
 
   useEffect(() => {
-    const workflowElement = workflowRef.current;
-    const lottieElement = lottieRef.current;
-    if (!workflowElement || !lottieElement) {
-      return;
-    }
-
     const tl = timeline({ start: 10, once: true });
 
     tl.to('.' + styles['intro__workflow-heading'], {

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 import cn from 'classnames';
 
 import styles from './Hero.module.css';
@@ -10,7 +10,12 @@ const Hero = () => {
   const { animateFromTo, animateTo } = useAnimation(ref);
 
   useEffect(() => {
-    animateTo(styles.hero__ui, { to: { opacity: 1 }, start: 0, end: 17 });
+    animateFromTo(styles.hero__ui, {
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      start: 0,
+      end: 17,
+    });
     animateFromTo(styles['hero__transform-target'], {
       from: { x: '0.054%', y: 0, scale: 1 },
       to: { x: '2%', y: 60, scale: 0.519937 },
@@ -20,7 +25,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className={cn(styles.hero, 'wf-section')}>
+    <div className={cn(styles.hero)}>
       <div className={styles.hero__container}>
         <div ref={ref} className={styles['hero__container-inner']}>
           <div className={styles['hero__scroll-container']}>

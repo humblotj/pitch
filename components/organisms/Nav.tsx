@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { gsap } from 'gsap';
 import cn from 'classnames';
 
 import styles from './Nav.module.css';
@@ -7,6 +9,20 @@ import Logo from '../../assets/icons/logo.svg';
 import DropdownArrow from '../../assets/icons/dropdown-arrow.svg';
 
 const Nav = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.to(ref.current, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        toggleActions: 'play none none reset',
+      },
+      duration: 0.5,
+    });
+  }, []);
+
   return (
     <>
       <div role="banner" className={cn(styles.nav, 'w-nav')}>
@@ -247,7 +263,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div className={styles['nav-shadow']}></div>
+      <div ref={ref} className={styles['nav-shadow']}></div>
     </>
   );
 };

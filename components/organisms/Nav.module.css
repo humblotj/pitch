@@ -6,6 +6,7 @@
     z-index: 9999999999998;
     padding: 16px 10vw;
     background-color: #fff;
+    opacity: 1;
 }
 
 .nav.nav--purple {
@@ -322,6 +323,7 @@
     height: 5em;
     background-color: transparent;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.16), 0 2px 6px 0 rgba(0, 0, 0, 0.08), 0 0 1px 0 rgba(0, 0, 0, 0.08);
+    opacity: 0;
 }
 
 .nav__dropdown {

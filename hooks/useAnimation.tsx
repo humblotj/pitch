@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import lottie, { AnimationItem } from 'lottie-web';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const useAnimation = (
   ref: RefObject<HTMLDivElement>,
   animationStartEntering = false,
