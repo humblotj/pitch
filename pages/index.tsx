@@ -1,17 +1,17 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import Cta from '../components/organisms/Cta';
-import Decks from '../components/organisms/Decks';
-import Footer from '../components/organisms/Footer';
-import Formating from '../components/organisms/Formating';
-import Hero from '../components/organisms/Hero';
-import Integrations from '../components/organisms/Integrations';
-import Intro from '../components/organisms/Intro';
-import Nav from '../components/organisms/Nav';
-import News from '../components/organisms/News';
-import Sharing from '../components/organisms/Sharing';
-import Testimonials from '../components/organisms/Testimonials';
+import Cta from '../components/common/Cta';
+import Decks from '../components/home/Decks';
+import Footer from '../components/common/Footer';
+import Formating from '../components/home/Formating';
+import Hero from '../components/home/Hero';
+import Integrations from '../components/home/Integrations';
+import Intro from '../components/home/Intro';
+import Nav from '../components/common/Nav';
+import News from '../components/home/News';
+import Sharing from '../components/home/Sharing';
+import Testimonials from '../components/home/Testimonials';
 
 const Home: NextPage = () => {
   return (
