@@ -299,7 +299,7 @@ textarea.w-select {
 }
 .w-dropdown-list {
   position: absolute;
-  background: #dddddd;
+  background: transparent;
   display: none;
   min-width: 100%;
 }
@@ -316,6 +316,9 @@ textarea.w-select {
 }
 .w-dropdown-link:focus {
   outline: 0;
+}
+.w-icon-dropdown-toggle:before {
+  content: "\e603";
 }
 @media screen and (max-width: 767px) {
   .w-nav-brand {

@@ -314,6 +314,11 @@
     margin-right: 50px;
 }
 
+.w--current {
+    border-bottom: 2px solid #334ac0;
+    color: #334ac0;
+}
+
 .nav-shadow {
     position: fixed;
     left: 0%;
@@ -331,10 +336,6 @@
     left: -63px;
     z-index: 9999999;
     width: 200px;
-}
-
-.nav__dropdown.w--open {
-    background-color: transparent;
 }
 
 .nav__dropdown-bg {
@@ -407,7 +408,7 @@
 .nav__link-wrapper-learning {
     display: flex;
     padding: 0px;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .nav__link-div-jobstext {
@@ -600,7 +601,6 @@
         padding-right: 10vw;
         padding-left: 10vw;
     }
-
     .nav__container {
         max-width: 100em;
     }
@@ -610,7 +610,6 @@
     .nav {
         padding: 8px 0vw;
     }
-
     .nav__container {
         position: relative;
         max-width: 100vmax;
@@ -620,7 +619,6 @@
         padding-left: 4vw;
         align-content: center;
     }
-
     .nav__menu {
         z-index: 9999;
         display: block;
@@ -631,32 +629,26 @@
         background-color: #fff;
         box-shadow: 0 4px 26px 0 rgba(0, 0, 0, 0.12);
     }
-
     .nav__mobilebutton {
         padding: 8px;
         order: 3;
         color: #2b2a35;
     }
-
     .nav__mobilebutton.w--open {
         background-color: transparent;
         color: #2b2a35;
     }
-
     .nav__mobilebutton.nav__mobilebutton--white {
         color: #fff;
     }
-
     .nav__buttons {
         position: absolute;
         right: 100px;
         order: 2;
     }
-
     .button {
         padding: 10px;
     }
-
     .nav__link-div-jobs {
         display: none;
         width: 100%;
@@ -666,106 +658,82 @@
         align-items: center;
         border-top: 1px solid #dddfe5;
     }
-
     .nav__link-div-jobs-counter {
         position: static;
         top: auto;
         right: auto;
     }
-
     .nav__link-div-learning.nav__link-div-learning--space {
         display: none;
         margin-right: 0px;
     }
-
     .nav__link-div {
         display: flex;
         height: auto;
         padding: 1.6em 6vw 1.3em;
         border-top: 1px solid #dddfe5;
     }
-
     .nav__link-div:hover {
         border-bottom: 1px none #000;
     }
-
     .nav__link-div.nav__link-div--black:hover {
         border-bottom-style: none;
     }
-
     .nav__link-div.nav__link-div--black.nav__link-div--space {
         margin-right: 0px;
     }
-
     .nav__link-div.nav__link-div--black.nav__link-div--space.w--current {
         border-bottom-style: none;
     }
-
     .nav__link-div.nav__link-div--black.nav__link-div--space.nav__link-div--hidedesktop {
         display: flex;
-
         justify-content: flex-start;
     }
-
     .nav__link-div.nav__link-div--white {
         color: #2b2a35;
     }
-
     .nav__link-div.nav__link-div--white.w--current {
         border-bottom-style: none;
     }
-
     .nav__link-div.nav__link-div--white.nav__link-div--space {
         margin-right: 0px;
     }
-
     .nav-shadow {
         height: 56px;
     }
-
     .nav__mobileicon {
         color: #2b2a35;
         font-size: 32px;
     }
-
     .nav__link-div-jobstext {
         height: auto;
     }
-
     .nav__link-div-jobstext.nav__link-div--black.nav__link-div--space {
         margin-right: 0px;
     }
-
     .nav__link-div-jobstext.nav__link-div--black.nav__link-div--space.w--current {
         border-bottom-style: none;
     }
-
     .nav__link-div-jobstext.nav__link-div--black.nav__link-div--space.nav__link-div--hidedesktop {
         display: flex;
-
         justify-content: flex-start;
     }
-
     .nav__link-div-onlymobile {
         display: flex;
         height: auto;
         padding: 1.6em 6vw 1.6em 10vw;
         border-top: 1px solid #dddfe5;
     }
-
     .nav__link-div-onlymobile.nav__link-div--black.nav__link-div--space {
         margin-right: 0px;
     }
-
     .nav__link-div-onlymobile.nav__link-div--black.nav__link-div--space.w--current {
         border-bottom-style: none;
     }
-
     .nav__link-div-onlymobile.nav__link-div--black.nav__link-div--space.nav__link-div--hidedesktop {
         display: flex;
         justify-content: flex-start;
     }
-
     .nav__link-div-jobs-mobileonly {
         display: flex;
         width: 100%;
@@ -783,7 +751,6 @@
     .button.button--white-whitebg.button--space.button--nomobile {
         display: none;
     }
-
     .button.button--white-purplebg.button--space.button--nomobile {
         display: none;
     }

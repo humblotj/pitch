@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import cn from 'classnames';
@@ -7,9 +7,13 @@ import styles from './Nav.module.css';
 
 import Logo from '../../assets/icons/logo.svg';
 import DropdownArrow from '../../assets/icons/dropdown-arrow.svg';
+import IconExpand from '../../assets/icons/icon-expand.svg';
+import { useRouter } from 'next/dist/client/router';
 
 const Nav = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const [dropDownOpen, setDropDownOpen] = useState(false);
 
   useEffect(() => {
     gsap.to(ref.current, {
@@ -46,7 +50,7 @@ const Nav = () => {
                   styles['nav__link-div--black'],
                   styles['nav__link-div--space'],
                   'w-inline-block',
-                  'w--current',
+                  { [styles['w--current']]: router.pathname === '/' },
                 )}
               >
                 <div className={styles.nav__link}>Home</div>
@@ -59,6 +63,7 @@ const Nav = () => {
                   styles['nav__link-div--black'],
                   styles['nav__link-div--space'],
                   'w-inline-block',
+                  { [styles['w--current']]: router.pathname === '/about' },
                 )}
               >
                 <div className={styles.nav__link}>About</div>
@@ -119,6 +124,8 @@ const Nav = () => {
                 styles['nav__link-div-learning--space'],
                 'w-dropdown',
               )}
+              onMouseEnter={() => setDropDownOpen(true)}
+              onMouseLeave={() => setDropDownOpen(false)}
             >
               <div
                 className={cn(
@@ -126,12 +133,7 @@ const Nav = () => {
                   'w-dropdown-toggle',
                 )}
               >
-                <div
-                  className={cn(
-                    styles['nav__link-div-learning-arrow'],
-                    'w-icon-dropdown-toggle',
-                  )}
-                ></div>
+                <IconExpand />
                 <div
                   className={cn(
                     styles['nav__link-learning'],
@@ -142,7 +144,11 @@ const Nav = () => {
                   Learning
                 </div>
               </div>
-              <nav className={cn(styles['nav__dropdown'], 'w-dropdown-list')}>
+              <nav
+                className={cn(styles['nav__dropdown'], 'w-dropdown-list', {
+                  'w--open': dropDownOpen,
+                })}
+              >
                 <div className={styles['nav__dropdown-wrapper']}>
                   <div className={cn(styles['nav__dropdown-arrow'], 'w-embed')}>
                     <DropdownArrow />
@@ -158,6 +164,9 @@ const Nav = () => {
                           styles['nav__dropdown-link-div--black'],
                           styles['nav__dropdown-link-div--space'],
                           'w-inline-block',
+                          {
+                            [styles['w--current']]: router.pathname === '/blog',
+                          },
                         )}
                       >
                         <div className={styles['nav__dropdown-link']}>Blog</div>
