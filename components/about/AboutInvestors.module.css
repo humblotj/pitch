@@ -1,0 +1,34 @@
+@media screen and (min-width: 1440px) {
+    .about__investors-container {
+        grid-column-gap: 180px;
+        grid-row-gap: 66px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .about__investors-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about__investors {
+        margin-top: 40px;
+    }
+    .about__investors-heading {
+        font-size: 2.6em;
+    }
+    .about__investors-container {
+        grid-template-columns: 1fr;
+    }
+    .about__investors-logo.about__investors-logo--50space {
+        margin-bottom: 30px;
+    }
+    .about__investors-name {
+        font-size: 1.1em;
+    }
+    .about__investors-info {
+        font-size: 1.1em;
+    }
+}

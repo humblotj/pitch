@@ -1,0 +1,22 @@
+@media screen and (min-width: 1280px) {
+    .about-intro__wrapper {
+        max-width: 60em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .about-intro {
+        padding: 60px 4vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-intro {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .about-intro__paragraph {
+        font-size: 1.3em;
+        line-height: 1.8em;
+    }
+}

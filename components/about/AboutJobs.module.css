@@ -1,0 +1,101 @@
+@media screen and (min-width: 1280px) {
+    .about-jobs__mission {
+        max-width: 70vw;
+    }
+    .about-jobs__benefits {
+        max-width: 70vw;
+    }
+    .divider-800 {
+        max-width: 70vw;
+    }
+    .about-jobs__positions-wrapper {
+        width: 50vw;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .about-jobs__mission {
+        max-width: 50vw;
+    }
+    .about-jobs__benefits {
+        max-width: 60vw;
+    }
+    .divider-800 {
+        max-width: 60vw;
+    }
+    .about-jobs__positions-wrapper {
+        width: 40vw;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .about-jobs__mission {
+        max-width: 44vw;
+    }
+    .about-jobs__benefits {
+        max-width: 44vw;
+    }
+    .divider-800 {
+        max-width: 44vw;
+    }
+    .about-jobs__positions-wrapper {
+        width: 35vw;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .about-jobs {
+        padding: 60px 4vw;
+    }
+    .about-jobs__benefits {
+        margin-bottom: 60px;
+    }
+    .about-jobs__benefits-heading {
+        font-size: 1.8em;
+    }
+    .about-jobs__positions.about-jobs__positions--86margin {
+        margin-top: 60px;
+    }
+    .about-jobs__positions-wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-jobs {
+        align-items: flex-start;
+    }
+    .about-jobs__mission-heading {
+        font-size: 2.8em;
+    }
+    .about-jobs__mission-paragraph {
+        font-size: 1.3em;
+        line-height: 1.8em;
+    }
+    .about-jobs__benefits-wrapper {
+        justify-content: start;
+        grid-template-columns: 1fr;
+    }
+    .about-jobs__benefit {
+        font-size: 1.2em;
+        line-height: 1.8em;
+    }
+    .about-jobs__positions-heading {
+        font-size: 1.8em;
+    }
+    .about-jobs__positions-wrapper {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .about-jobs__position-title {
+        font-size: 1.1em;
+        line-height: 2em;
+    }
+    .about-jobs__position-location {
+        font-size: 1.1em;
+        line-height: 2em;
+    }
+}

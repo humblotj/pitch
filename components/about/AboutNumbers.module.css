@@ -1,0 +1,35 @@
+@media screen and (max-width: 991px) {
+    .about-numbers {
+        padding: 60px 4vw;
+    }
+    .about-numbers__metric {
+        font-size: 1.6em;
+        line-height: 1em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-numbers {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .about-numbers__heading {
+        margin-bottom: 40px;
+        font-size: 2.6em;
+    }
+    .about-numbers__wrapper {
+        margin-bottom: 40px;
+        grid-column-gap: 30px;
+        grid-row-gap: 8px;
+        grid-template-areas: ". ." ". ." ". Area-2" ". Area";
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto;
+    }
+    .about-numbers__glassdoor {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    .about-numbers__rating-link {
+        font-size: 1.1em;
+    }
+}
