@@ -276,7 +276,7 @@ const Decks = () => {
           />
           <img
             src="/slide27_720w.png"
-            // srcSet="/slide27_720w-p-500.png 500w, /slide27_720w.png 720w"
+            srcSet="/slide27_720w-p-500.png 500w, /slide27_720w.png 720w"
             sizes="(max-width: 479px) 24vw, (max-width: 991px) 16vw, (max-width: 1919px) 15vw, 16vw"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
@@ -299,7 +299,7 @@ const Decks = () => {
           />
           <img
             src="/slide30_720w.jpg"
-            // srcSet="/slide30_720w-p-500.jpeg 500w, /slide30_720w.jpg 720w"
+            srcSet="/slide30_720w-p-500.jpeg 500w, /slide30_720w.jpg 720w"
             sizes="(max-width: 479px) 24vw, (max-width: 991px) 16vw, (max-width: 1919px) 15vw, 16vw"
             alt=""
             className={styles.decks__img}

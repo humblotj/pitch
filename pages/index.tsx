@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 
 import Cta from '../components/organisms/Cta';
 import Decks from '../components/organisms/Decks';
@@ -15,6 +16,13 @@ import Testimonials from '../components/organisms/Testimonials';
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <title>Pitch | Home</title>
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Clone Website" />
+        <meta property="og:title" content="Pitch | Home" />
+      </Head>
       <Nav />
       <Hero />
       <Intro />
