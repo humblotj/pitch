@@ -33,7 +33,7 @@ const Nav = () => {
         <div className={cn(styles.nav__container, 'w-container')}>
           <Link href="/">
             <a
-              aria-current="page"
+              aria-current={router.pathname === '/' && 'page'}
               className={cn(styles.nav__logo, 'w-nav-brand', 'w--current')}
             >
               <div className={cn(styles['nav__logo-image'], 'w-embed')}>
@@ -44,7 +44,7 @@ const Nav = () => {
           <nav role="navigation" className={cn(styles.nav__menu, 'w-nav-menu')}>
             <Link href="/">
               <a
-                aria-current="page"
+                aria-current={router.pathname === '/' && 'page'}
                 className={cn(
                   styles['nav__link-div'],
                   styles['nav__link-div--black'],
@@ -58,6 +58,7 @@ const Nav = () => {
             </Link>
             <Link href="/about">
               <a
+                aria-current={router.pathname === '/about' && 'page'}
                 className={cn(
                   styles['nav__link-div'],
                   styles['nav__link-div--black'],
@@ -159,6 +160,7 @@ const Nav = () => {
                   <div className={styles['nav__dropdown-links-div']}>
                     <Link href="/blog">
                       <a
+                        aria-current={router.pathname === '/blog' && 'page'}
                         className={cn(
                           styles['nav__dropdown-link-div'],
                           styles['nav__dropdown-link-div--black'],
@@ -265,11 +267,9 @@ const Nav = () => {
               Get early access
             </a>
           </div>
-          <div className={cn(styles.nav__mobilebutton, 'w-nav-button')}>
-            <div
-              className={cn(styles.nav__mobileicon, 'w-icon-nav-menu')}
-            ></div>
-          </div>
+          <button className={cn(styles.nav__mobilebutton)}>
+            <span className={cn(styles.nav__mobileicon)}></span>
+          </button>
         </div>
       </div>
       <div ref={ref} className={styles['nav-shadow']}></div>

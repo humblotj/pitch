@@ -630,9 +630,15 @@
         box-shadow: 0 4px 26px 0 rgba(0, 0, 0, 0.12);
     }
     .nav__mobilebutton {
-        padding: 8px;
         order: 3;
         color: #2b2a35;
+        position: relative;
+        width: 2.2rem;
+        height: 2.2rem;
+        padding: 0.3rem;
+        cursor: pointer;
+        border: none;
+        background: none;
     }
     .nav__mobilebutton.w--open {
         background-color: transparent;
@@ -643,7 +649,7 @@
     }
     .nav__buttons {
         position: absolute;
-        right: 100px;
+        right: 90px;
         order: 2;
     }
     .button {
@@ -701,9 +707,32 @@
     .nav-shadow {
         height: 56px;
     }
+    .nav__mobileicon, .nav__mobileicon::after, .nav__mobileicon::before {
+        position: absolute;
+        width: 1.6rem;
+        height: 2px;
+        transition-property: transform;
+        border-radius: 0.15rem;
+        background-color: currentColor;
+    }
     .nav__mobileicon {
-        color: #2b2a35;
-        font-size: 32px;
+        top: 50%;
+        display: block;
+        margin-top: -0.1rem;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transition-duration: 0.075s;
+    }
+    .nav__mobileicon::after, .nav__mobileicon::before {
+        display: block;
+        content: '';
+    }
+    .nav__mobileicon::before {
+        top: -0.4rem;
+        transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+    }
+    .nav__mobileicon::after {
+        bottom: -0.4rem;
+        transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
     .nav__link-div-jobstext {
         height: auto;
