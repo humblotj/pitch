@@ -1,0 +1,154 @@
+.about-numbers {
+    z-index: 1;
+    display: flex;
+    padding: 74px 10vw 97px;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(180deg, #fff 73%, #f6f6f6);
+}
+
+.about-numbers__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.about-numbers__heading {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.about-numbers__wrapper {
+    display: grid;
+    margin-bottom: 53px;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 70px;
+    grid-row-gap: 21px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+}
+
+.about-numbers__metric {
+    font-family: Markpro, sans-serif;
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.about-numbers__metric.about-numbers__metric--blue {
+    color: #334ac0;
+}
+
+.about-numbers__metric-link {
+    color: #334ac0;
+    text-decoration: none;
+}
+
+.about-numbers__metric-link:hover {
+    text-decoration: underline;
+}
+
+.about-numbers__metrich {
+    font-family: Eina, sans-serif;
+    color: rgba(43, 42, 53, 0.5);
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.about-numbers__open-position {
+    grid-column-end: 5;
+    grid-column-start: 4;
+    grid-row-end: 3;
+    grid-row-start: 2;
+}
+
+.about-numbers__hiring {
+    grid-column-end: 5;
+    grid-column-start: 4;
+    grid-row-end: 2;
+    grid-row-start: 1;
+}
+
+.about-numbers__glassdoor {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 42px;
+    grid-row-gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.about-numbers__rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2b2a35;
+    text-decoration: none;
+}
+
+.about-numbers__rating:hover {
+    text-decoration: underline;
+}
+
+.about-numbers__stars-wrapper {
+    display: flex;
+}
+
+.about-numbers__rating-link {
+    font-family: Eina, sans-serif;
+    color: #2b2a35;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 991px) {
+    .about-numbers {
+        padding: 60px 4vw;
+    }
+    .about-numbers__metric {
+        font-size: 1.6em;
+        line-height: 1em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-numbers {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .about-numbers__heading {
+        margin-bottom: 40px;
+        font-size: 2.6em;
+    }
+    .about-numbers__wrapper {
+        margin-bottom: 40px;
+        grid-column-gap: 30px;
+        grid-row-gap: 8px;
+        grid-template-areas: ". ." ". ." ". Area-2" ". Area";
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto;
+    }
+    .about-numbers__glassdoor {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    .about-numbers__rating-link {
+        font-size: 1.1em;
+    }
+    .about-numbers__open-position {
+        grid-area: Area;
+    }
+    .about-numbers__hiring {
+        grid-area: Area-2;
+    }
+}

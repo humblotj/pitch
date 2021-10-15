@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import cn from 'classnames';
 
 import styles from './Hero.module.css';
@@ -7,7 +6,7 @@ import useAnimation from '../../hooks/useAnimation';
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { animateFromTo, animateTo } = useAnimation(ref);
+  const { animateFromTo } = useAnimation(ref);
 
   useEffect(() => {
     animateFromTo(styles.hero__ui, {
@@ -40,7 +39,7 @@ const Hero = () => {
                   All hands on deck.
                 </h1>
                 <img
-                  src="/hero-hands.png"
+                  src="/images/hero-hands.png"
                   loading="eager"
                   alt=""
                   className={styles.hero__hand}
@@ -48,7 +47,7 @@ const Hero = () => {
                   height="2160"
                 />
                 <img
-                  src="/hero-ui_2808w.jpg"
+                  src="/images/hero-ui_2808w.jpg"
                   loading="eager"
                   alt=""
                   className={styles.hero__ui}

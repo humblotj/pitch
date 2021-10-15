@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 
@@ -8,21 +7,19 @@ import useAnimation from '../../hooks/useAnimation';
 const Sharing = () => {
   const sharingTextRef = useRef<HTMLDivElement>(null);
   const sharingPlaneWrapperRef = useRef<HTMLDivElement>(null);
-  const { timeline } = useAnimation(sharingTextRef, true);
+  const { animateTo } = useAnimation(sharingTextRef, true);
   const { animateFromTo } = useAnimation(sharingPlaneWrapperRef, true);
 
   useEffect(() => {
-    const tl = timeline({ start: 10, once: true });
-
-    tl.to('.' + styles['sharing__text-heading'], {
-      opacity: 1,
-      y: 0,
+    animateTo(styles.sharing__text + '> *', {
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+      start: 10,
       duration: 0.3,
-    });
-    tl.to('.' + styles['sharing__text-paragraph'], {
-      opacity: 1,
-      y: 0,
-      duration: 0.3,
+      once: true,
+      stagger: 0.3,
     });
 
     animateFromTo(styles.sharing__plane, {
@@ -57,14 +54,14 @@ const Sharing = () => {
           className={styles['sharing__plane-wrapper']}
         >
           <img
-            src="/plane_800w.png"
+            src="/images/plane_800w.png"
             alt=""
             className={styles.sharing__plane}
             // width="800"
             // height="601"
           />
           <img
-            src="/shadow.png"
+            src="/images/shadow.png"
             alt=""
             className={styles['sharing__plane-shadow']}
             // width="120"
@@ -72,28 +69,28 @@ const Sharing = () => {
           />
         </div>
         <img
-          src="/invite@2x.png"
+          src="/images/invite@2x.png"
           alt=""
           className={styles.sharing__invite}
           //   width="800"
           //   height="412"
         />
         <img
-          src="/access.svg"
+          src="/images/access.svg"
           alt=""
           className={styles.sharing__access}
           //   width="382"
           //   height="115"
         />
         <img
-          src="/hand_600w.png"
+          src="/images/hand_600w.png"
           alt=""
           className={styles.sharing__hand}
           //   width="600"
           //   height="748"
         />
         <img
-          src="/tablet_2400w.jpg"
+          src="/images/tablet_2400w.jpg"
           alt=""
           className={styles.sharing__image}
           //   width="2400"

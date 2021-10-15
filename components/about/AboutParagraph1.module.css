@@ -1,0 +1,38 @@
+
+.about__paragraph1-wrapper {
+    max-width: 100em;
+    margin-top: 125px;
+    margin-bottom: 94px;
+  }
+  
+  .about__paragraph1 {
+    font-family: Eina, sans-serif;
+    font-size: 22px;
+    line-height: 38px;
+    font-weight: 400;
+  }
+  
+
+@media screen and (min-width: 1280px) {
+    .about__paragraph1-wrapper {
+      max-width: 60em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .about__paragraph1-wrapper {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about__paragraph1-wrapper {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    .about__paragraph1 {
+      font-size: 1.3em;
+      line-height: 1.8em;
+    }
+}

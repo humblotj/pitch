@@ -119,6 +119,7 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
   vertical-align: middle;
   display: inline-block;
 }
@@ -283,9 +284,6 @@ textarea.w-input, textarea.w-select {
 }
 
 .w-dropdown-toggle {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   display: inline-block;
   cursor: pointer;
@@ -447,11 +445,6 @@ textarea.w-input, textarea.w-select {
   font-size: 24px;
   display: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -478,7 +471,7 @@ textarea.w-input, textarea.w-select {
 
 @media screen and (max-width: 991px) {
   .w-nav-menu {
-    display: none!important;
+    display: none !important;
   }
   .w-nav-button {
     display: block;
@@ -487,7 +480,7 @@ textarea.w-input, textarea.w-select {
 
 @media screen and (max-width: 767px) {
   .w-nav-menu {
-    display: none!important;
+    display: none !important;
   }
   .w-nav-button {
     display: block;
@@ -499,7 +492,7 @@ textarea.w-input, textarea.w-select {
 
 @media screen and (max-width: 479px) {
   .w-nav-menu {
-    display: none!important;
+    display: none !important;
   }
   .w-nav-button {
     display: block;
@@ -507,47 +500,6 @@ textarea.w-input, textarea.w-select {
 }
 
 @media screen and (min-width: 1280px) {
-  .about-hero {
-    padding-bottom: 0px;
-  }
-  .about-hero__wrapper {
-    width: 50em;
-  }
-  .about-hero__heading {
-    font-size: 7em;
-  }
-  .about-hero__image {
-    width: 35em;
-    margin-bottom: 0px;
-  }
-  .about-intro__wrapper {
-    max-width: 60em;
-  }
-  .about__heading-wrapper {
-    width: 828px;
-  }
-  .about__heading {
-    font-size: 120px;
-    line-height: 120px;
-  }
-  .about__paragraph1-wrapper {
-    max-width: 60em;
-  }
-  .about__paragraph2-wrapper {
-    max-width: 60em;
-  }
-  .about-jobs__mission {
-    max-width: 70vw;
-  }
-  .about-jobs__benefits {
-    max-width: 70vw;
-  }
-  .divider-800 {
-    max-width: 70vw;
-  }
-  .about-jobs__positions-wrapper {
-    width: 50vw;
-  }
   .newsletter-cta__container {
     padding-top: 3em;
     padding-bottom: 2em;
@@ -563,40 +515,9 @@ textarea.w-input, textarea.w-select {
     width: 50%;
     opacity: 0;
   }
-  .div-animated {
-    top: 50em;
-  }
 }
 
 @media screen and (min-width: 1440px) {
-  .about-hero {
-    height: 60em;
-  }
-  .about-hero__wrapper {
-    width: 55em;
-  }
-  .about-hero__heading {
-    font-size: 9em;
-  }
-  .about-hero__image {
-    width: 50em;
-  }
-  .about__investors-container {
-    grid-column-gap: 180px;
-    grid-row-gap: 66px;
-  }
-  .about-jobs__mission {
-    max-width: 50vw;
-  }
-  .about-jobs__benefits {
-    max-width: 60vw;
-  }
-  .divider-800 {
-    max-width: 60vw;
-  }
-  .about-jobs__positions-wrapper {
-    width: 40vw;
-  }
   .blog-hero__heading {
     font-size: 4em;
   }
@@ -657,9 +578,6 @@ textarea.w-input, textarea.w-select {
   .blog-hero__heading-link {
     width: 80%;
   }
-  .div-animated {
-    top: 90em;
-  }
   .disclaimer {
     margin-right: 15vw;
     margin-left: 15vw;
@@ -667,21 +585,6 @@ textarea.w-input, textarea.w-select {
 }
 
 @media screen and (min-width: 1920px) {
-  .about-hero {
-    height: 70em;
-  }
-  .about-jobs__mission {
-    max-width: 44vw;
-  }
-  .about-jobs__benefits {
-    max-width: 44vw;
-  }
-  .divider-800 {
-    max-width: 44vw;
-  }
-  .about-jobs__positions-wrapper {
-    width: 35vw;
-  }
   .blog-hero__wrapper {
     max-width: 100em;
   }
@@ -758,58 +661,6 @@ textarea.w-input, textarea.w-select {
 }
 
 @media screen and (max-width: 991px) {
-  .about-hero {
-    height: 42em;
-  }
-  .about-hero__image {
-    margin-bottom: 0em;
-  }
-  .about-intro {
-    padding: 60px 4vw;
-  }
-  .about {
-    padding: 60px 4vw;
-  }
-  .about__heading {
-    font-size: 4em;
-  }
-  .about__confetti {
-    width: 30em;
-  }
-  .about__paragraph1-wrapper {
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
-  .about__paragraph2-wrapper {
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
-  .about__investors-container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
-  }
-  .about-numbers {
-    padding: 60px 4vw;
-  }
-  .about-numbers__metric {
-    font-size: 1.6em;
-    line-height: 1em;
-  }
-  .about-jobs {
-    padding: 60px 4vw;
-  }
-  .about-jobs__benefits {
-    margin-bottom: 60px;
-  }
-  .about-jobs__benefits-heading {
-    font-size: 1.8em;
-  }
-  .about-jobs__positions.about-jobs__positions--86margin {
-    margin-top: 60px;
-  }
-  .about-jobs__positions-wrapper {
-    width: 100%;
-  }
   .blog-hero {
     padding-right: 4vw;
     padding-left: 4vw;
@@ -943,143 +794,6 @@ textarea.w-input, textarea.w-select {
 }
 
 @media screen and (max-width: 767px) {
-  .about-hero {
-    height: 24em;
-  }
-  .about-hero__wrapper {
-    width: 60vw;
-  }
-  .about-hero__heading {
-    margin-bottom: -1vh;
-    font-size: 10vw;
-    line-height: 1em;
-    letter-spacing: -1px;
-  }
-  .about-hero__image {
-    width: 16em;
-    margin-left: 30px;
-  }
-  .about-intro {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  .about-intro__paragraph {
-    font-size: 1.3em;
-    line-height: 1.8em;
-  }
-  .about {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  .about__heading-wrapper {
-    width: 70vw;
-  }
-  .about__heading {
-    font-size: 2.6em;
-  }
-  .about__confetti {
-    width: 23em;
-  }
-  .about__paragraph1-wrapper {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  .about__paragraph1 {
-    font-size: 1.3em;
-    line-height: 1.8em;
-  }
-  .about__photos-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .about__paragraph2-wrapper {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  .about__culture {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 40vw auto auto;
-  }
-  .about__paragraph2 {
-    font-size: 1.3em;
-    line-height: 1.8em;
-  }
-  .about__investors {
-    margin-top: 40px;
-  }
-  .about__investors-heading {
-    font-size: 2.6em;
-  }
-  .about__investors-container {
-    grid-template-columns: 1fr;
-  }
-  .about__investors-logo.about__investors-logo--50space {
-    margin-bottom: 30px;
-  }
-  .about__investors-name {
-    font-size: 1.1em;
-  }
-  .about__investors-info {
-    font-size: 1.1em;
-  }
-  .about-numbers {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  .about-numbers__heading {
-    margin-bottom: 40px;
-    font-size: 2.6em;
-  }
-  .about-numbers__wrapper {
-    margin-bottom: 40px;
-    grid-column-gap: 30px;
-    grid-row-gap: 8px;
-    grid-template-areas: ". ." ". ." ". Area-2" ". Area";
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto auto;
-  }
-  .about-numbers__glassdoor {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
-  .about-numbers__rating-link {
-    font-size: 1.1em;
-  }
-  .about-jobs {
-    align-items: flex-start;
-  }
-  .about-jobs__mission-heading {
-    font-size: 2.8em;
-  }
-  .about-jobs__mission-paragraph {
-    font-size: 1.3em;
-    line-height: 1.8em;
-  }
-  .about-jobs__benefits-wrapper {
-    justify-content: start;
-    grid-template-columns: 1fr;
-  }
-  .about-jobs__benefit {
-    font-size: 1.2em;
-    line-height: 1.8em;
-  }
-  .about-jobs__positions-heading {
-    font-size: 1.8em;
-  }
-  .about-jobs__positions-wrapper {
-    display: flex;
-    height: auto;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .about-jobs__position-title {
-    font-size: 1.1em;
-    line-height: 2em;
-  }
-  .about-jobs__position-location {
-    font-size: 1.1em;
-    line-height: 2em;
-  }
   .blog-hero {
     padding-top: 80px;
   }
@@ -1203,9 +917,6 @@ textarea.w-input, textarea.w-select {
   }
   .blog-articles__image12 {
     height: 60vw;
-  }
-  .div-animated {
-    top: 120vh;
   }
   .blog-articles__wrapper-mobile {
     grid-row-gap: 60px;

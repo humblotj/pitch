@@ -8,27 +8,25 @@ import integrationsLottie from '../../assets/lottie/integrations.json';
 const Integrations = () => {
   const integrationsTextRef = useRef<HTMLDivElement>(null);
   const lottieRef = useRef<HTMLDivElement>(null);
-  const { timeline } = useAnimation(integrationsTextRef, true);
+  const { animateTo } = useAnimation(integrationsTextRef, true);
   const { loadAnimation, lottieAnimate } = useAnimation(lottieRef, true);
 
   useEffect(() => {
-    const tl = timeline({ start: 10, once: true });
-
-    tl.to('.' + styles['integrations__text-heading'], {
-      opacity: 1,
-      y: 0,
+    animateTo(styles.integrations__text + '> *', {
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+      start: 10,
       duration: 0.3,
-    });
-    tl.to('.' + styles['integrations__text-paragraph'], {
-      opacity: 1,
-      y: 0,
-      duration: 0.3,
+      once: true,
+      stagger: 0.3,
     });
 
     const integrationsAnimation = loadAnimation(integrationsLottie);
     lottieAnimate(integrationsAnimation, {
       duration: 3.8,
-      once: true,
+      loop: true,
     });
   }, []);
 

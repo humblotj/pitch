@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 
@@ -9,21 +8,19 @@ import collaborationLottie from '../../assets/lottie/collaboration.json';
 const Intro = () => {
   const workflowRef = useRef<HTMLDivElement>(null);
   const lottieRef = useRef<HTMLDivElement>(null);
-  const { timeline } = useAnimation(workflowRef, true);
+  const { animateTo } = useAnimation(workflowRef, true);
   const { loadAnimation, lottieAnimate } = useAnimation(lottieRef, true);
 
   useEffect(() => {
-    const tl = timeline({ start: 10, once: true });
-
-    tl.to('.' + styles['intro__workflow-heading'], {
-      opacity: 1,
-      y: 0,
+    animateTo(styles['intro__workflow-text'] + '> *', {
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+      start: 10,
       duration: 0.3,
-    });
-    tl.to('.' + styles['intro__workflow-paragraph'], {
-      opacity: 1,
-      y: 0,
-      duration: 0.3,
+      once: true,
+      stagger: 0.3,
     });
 
     const collaborationAnimation = loadAnimation(collaborationLottie);
@@ -39,7 +36,7 @@ const Intro = () => {
         <h5 className={styles['intro__logos-heading']}>Used by teams like</h5>
         <div className={styles['intro__logos-wrapper']}>
           <img
-            src="/superhuman.svg"
+            src="/images/superhuman.svg"
             alt=""
             className={cn(
               styles['intro__logo'],
@@ -49,7 +46,7 @@ const Intro = () => {
             height="16"
           />
           <img
-            src="/eyeEm.svg"
+            src="/images/eyeEm.svg"
             alt=""
             className={cn(
               styles['intro__logo'],
@@ -59,7 +56,7 @@ const Intro = () => {
             height="33"
           />
           <img
-            src="/chart-mogul.svg"
+            src="/images/chart-mogul.svg"
             alt=""
             className={cn(
               styles['intro__logo'],
@@ -69,7 +66,7 @@ const Intro = () => {
             height="26"
           />
           <img
-            src="/notion.svg"
+            src="/images/notion.svg"
             alt=""
             className={cn(
               styles['intro__logo'],
@@ -79,7 +76,7 @@ const Intro = () => {
             height="56"
           />
           <img
-            src="/dashdash.svg"
+            src="/images/dashdash.svg"
             alt=""
             className={styles.intro__logo}
             width="149"

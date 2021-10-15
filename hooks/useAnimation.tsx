@@ -4,14 +4,14 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import lottie, { AnimationItem } from 'lottie-web';
 
 const useAnimation = (
-  ref: RefObject<HTMLDivElement>,
+  ref?: RefObject<HTMLDivElement>,
   animationStartEntering = false,
 ) => {
   const timerRef = useRef<any>(null);
 
   const loadAnimation = useCallback(
     (animationData: any, className?: string) => {
-      const element = ref.current;
+      const element = ref ? ref.current : document.body;
       if (!element) {
         return;
       }
@@ -41,7 +41,7 @@ const useAnimation = (
         loop = false,
         delay = 0,
       }: {
-        start?: number;
+        start?: number | string;
         end?: number;
         duration?: number;
         once?: boolean;
@@ -50,7 +50,7 @@ const useAnimation = (
         delay?: number;
       },
     ) => {
-      const element = ref.current;
+      const element = ref ? ref.current : document.body;
       if (!element || !animation) {
         return;
       }
@@ -59,21 +59,30 @@ const useAnimation = (
         animation.loop = true;
       }
 
-      const animationStart = animationStartEntering
-        ? `${
-            (element.offsetHeight + window.innerHeight) * (start / 100)
-          } bottom`
-        : `${start}% ${start}%`;
-      const animationEnd = animationStartEntering
-        ? `+=${
-            (element.offsetHeight + window.innerHeight) *
-            ((Math.min(end, start) - start) / 100)
-          }`
-        : `+=${element.offsetHeight * ((Math.min(end, start) - start) / 100)}`;
+      let animationStart = start;
+
+      if (typeof start === 'number') {
+        animationStart = animationStartEntering
+          ? `${
+              (element.offsetHeight + window.innerHeight) * (start / 100)
+            } bottom`
+          : `${start}% ${start}%`;
+      }
+      let animationEnd = '+=0';
+      if (typeof start === 'number') {
+        animationEnd = animationStartEntering
+          ? `+=${
+              (element.offsetHeight + window.innerHeight) *
+              ((Math.max(end, start) - start) / 100)
+            }`
+          : `+=${
+              element.offsetHeight * ((Math.max(end, start) - start) / 100)
+            }`;
+      }
 
       ScrollTrigger.create({
         trigger: element,
-        scrub: scrub && !once,
+        scrub: scrub && !once && !duration,
         start: animationStart,
         end: animationEnd,
         once,
@@ -96,16 +105,29 @@ const useAnimation = (
         to,
         start,
         end,
+        duration,
         immediateRender = true,
-      }: {
-        from: gsap.TweenVars;
-        to: gsap.TweenVars;
-        start: number;
-        end: number;
-        immediateRender?: boolean;
-      },
+        once = false,
+        scrub = true,
+        toggleActions = undefined,
+        bodySelector = false,
+        ...rest
+      }:
+        | {
+            from: gsap.TweenVars;
+            to: gsap.TweenVars;
+            start: number;
+            end: number;
+            duration?: number;
+            immediateRender?: boolean;
+            once?: boolean;
+            scrub?: boolean;
+            toggleActions?: string;
+            bodySelector: boolean;
+          }
+        | gsap.TweenVars,
     ) => {
-      const element = ref.current;
+      const element = ref ? ref.current : document.body;
       if (!element) {
         return;
       }
@@ -117,20 +139,32 @@ const useAnimation = (
         : `${start}% ${start}%`;
       const animationEnd = animationStartEntering
         ? `+=${
-            (element.offsetHeight + window.innerHeight) * ((end - start) / 100)
+            (element.offsetHeight + window.innerHeight) *
+            ((Math.max(end, start) - start) / 100)
           }`
-        : `+=${element.offsetHeight * ((end - start) / 100)}`;
+        : `+=${element.offsetHeight * ((Math.max(end, start) - start) / 100)}`;
 
-      gsap.fromTo(element.querySelectorAll('.' + className), from, {
+      const targets = (bodySelector ? document.body : element).querySelectorAll(
+        '.' + className,
+      );
+      const vars = {
         ...to,
         immediateRender,
         scrollTrigger: {
           trigger: element,
-          scrub: true,
+          scrub: scrub && !once && !duration,
           start: animationStart,
           end: animationEnd,
+          once,
+          toggleActions,
         },
-      });
+        ...rest,
+      };
+      if (duration) {
+        vars.duration = duration;
+      }
+
+      gsap.fromTo(targets, from, vars);
     },
     [ref, animationStartEntering],
   );
@@ -146,7 +180,8 @@ const useAnimation = (
         immediateRender = true,
         once = false,
         scrub = true,
-        toggleActions = undefined,
+        toggleActions = 'play none none none',
+        bodySelector = false,
         ...rest
       }:
         | {
@@ -158,10 +193,11 @@ const useAnimation = (
             once?: boolean;
             scrub?: boolean;
             toggleActions?: string;
+            bodySelector: boolean;
           }
         | gsap.TweenVars,
     ) => {
-      const element = ref.current;
+      const element = ref ? ref.current : document.body;
       if (!element) {
         return;
       }
@@ -174,61 +210,33 @@ const useAnimation = (
       const animationEnd = animationStartEntering
         ? `+=${
             (element.offsetHeight + window.innerHeight) *
-            ((Math.min(end, start) - start) / 100)
+            ((Math.max(end, start) - start) / 100)
           }`
-        : `+=${element.offsetHeight * ((Math.min(end, start) - start) / 100)}`;
+        : `+=${element.offsetHeight * ((Math.max(end, start) - start) / 100)}`;
 
-      return gsap.to(element.querySelectorAll('.' + className), {
+      const targets = (bodySelector ? document.body : element).querySelectorAll(
+        '.' + className,
+      );
+
+      const vars = {
         ...to,
         immediateRender,
         scrollTrigger: {
           trigger: element,
-          scrub: scrub && !once,
+          scrub: scrub && !once && !duration,
           start: animationStart,
           end: animationEnd,
           once,
           toggleActions,
         },
-        duration,
         ...rest,
-      });
-    },
-    [ref, animationStartEntering],
-  );
+      };
 
-  const timeline = useCallback(
-    ({
-      start = 0,
-      end = 0,
-      once = false,
-    }: {
-      start?: number;
-      end?: number;
-      once?: boolean;
-    }) => {
-      const element = ref.current || document.body;
+      if (duration) {
+        vars.duration = duration;
+      }
 
-      const animationStart = animationStartEntering
-        ? `${
-            (element.offsetHeight + window.innerHeight) * (start / 100)
-          } bottom`
-        : `${start}% ${start}%`;
-      const animationEnd = animationStartEntering
-        ? `+=${
-            (element.offsetHeight + window.innerHeight) *
-            ((Math.min(end, start) - start) / 100)
-          }`
-        : `+=${element.offsetHeight * ((Math.min(end, start) - start) / 100)}`;
-
-      return gsap.timeline({
-        scrollTrigger: {
-          trigger: element,
-          scrub: !once,
-          start: animationStart,
-          end: animationEnd,
-          once,
-        },
-      });
+      return gsap.to(targets, vars);
     },
     [ref, animationStartEntering],
   );
@@ -238,7 +246,6 @@ const useAnimation = (
     lottieAnimate,
     animateFromTo,
     animateTo,
-    timeline,
   };
 };
 

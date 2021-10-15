@@ -1,0 +1,50 @@
+.about__culture {
+    display: grid;
+    max-width: 100em;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.about__culture-lottie {
+    width: 100%;
+}
+
+.about__culture-office {
+    width: 100%;
+    background-image: url('/images/office1.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.about__culture-photo {
+    width: 100%;
+}
+
+.about__culture-party {
+    width: 100%;
+    background-image: url('/images/party.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+@media screen and (max-width: 767px) {
+    .about__culture {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40vw auto auto;
+    }
+    .about__culture-office {
+        grid-column-end: 2;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-row-start: 1;
+    }
+    .about__culture-party {
+        grid-column-end: 3;
+        grid-column-start: 2;
+        grid-row-end: 2;
+        grid-row-start: 1;
+    }
+}

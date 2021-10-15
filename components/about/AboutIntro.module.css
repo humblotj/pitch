@@ -1,0 +1,44 @@
+.about-intro {
+    z-index: 1;
+    display: flex;
+    padding: 103px 10vw 95px;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(180deg, #fff 73%, #f6f6f6);
+}
+
+.about-intro__wrapper {
+    max-width: 100em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.about-intro__paragraph {
+    font-family: Eina, sans-serif;
+    font-size: 22px;
+    line-height: 38px;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 1280px) {
+    .about-intro__wrapper {
+        max-width: 60em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .about-intro {
+        padding: 60px 4vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-intro {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .about-intro__paragraph {
+        font-size: 1.3em;
+        line-height: 1.8em;
+    }
+}
