@@ -17,7 +17,7 @@ const Testimonials = () => {
             </div>
             <div className={styles['testimonials__card-info']}>
               <img
-                src="/rahul.jpg"
+                src="/images/rahul.jpg"
                 loading="lazy"
                 alt=""
                 className={styles['testimonials__card-photo']}
@@ -42,7 +42,7 @@ const Testimonials = () => {
             </div>
             <div className={styles['testimonials__card-info']}>
               <img
-                src="/aidan.jpg"
+                src="/images/aidan.jpg"
                 loading="lazy"
                 alt=""
                 className={styles['testimonials__card-photo']}
@@ -66,7 +66,7 @@ const Testimonials = () => {
             </div>
             <div className={styles['testimonials__card-info']}>
               <img
-                src="/shane.jpg"
+                src="/images/shane.jpg"
                 loading="lazy"
                 alt=""
                 className={styles['testimonials__card-photo']}

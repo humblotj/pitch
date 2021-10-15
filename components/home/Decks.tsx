@@ -83,35 +83,35 @@ const Decks = () => {
       <div ref={decksWrapperRef} className={styles.decks__wrapper}>
         <div className={cn(styles.decks__grid, styles['decks__grid--margin'])}>
           <img
-            src="/slide01_720w.png"
+            src="/images/slide01_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide02_720w.png"
+            src="/images/slide02_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide03_720w.png"
+            src="/images/slide03_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide04_720w.png"
+            src="/images/slide04_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide05_720w.png"
+            src="/images/slide05_720w.png"
             alt=""
             className={styles.decks__img}
             // width="720"
@@ -120,35 +120,35 @@ const Decks = () => {
         </div>
         <div className={cn(styles.decks__grid, styles['decks__grid--margin'])}>
           <img
-            src="/slide06_720w.jpg"
+            src="/images/slide06_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide07_720w.jpg"
+            src="/images/slide07_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide08_720w.png"
+            src="/images/slide08_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide09_720w.jpg"
+            src="/images/slide09_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide10_720w.jpg"
+            src="/images/slide10_720w.jpg"
             alt=""
             className={styles.decks__img}
             // width="720"
@@ -157,35 +157,35 @@ const Decks = () => {
         </div>
         <div className={cn(styles.decks__grid, styles['decks__grid--margin'])}>
           <img
-            src="/slide11_720w.jpg"
+            src="/images/slide11_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide12_720w.jpg"
+            src="/images/slide12_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide13_720w.png"
+            src="/images/slide13_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide14_720w.jpg"
+            src="/images/slide14_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide15_720w.png"
+            src="/images/slide15_720w.png"
             alt=""
             className={styles.decks__img}
             // width="720"
@@ -194,35 +194,35 @@ const Decks = () => {
         </div>
         <div className={cn(styles.decks__grid, styles['decks__grid--margin'])}>
           <img
-            src="/slide16_720w.png"
+            src="/images/slide16_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide17_720w.jpg"
+            src="/images/slide17_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide18_720w.jpg"
+            src="/images/slide18_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide19_720w.png"
+            src="/images/slide19_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide20_720w.jpg"
+            src="/images/slide20_720w.jpg"
             alt=""
             className={styles.decks__img}
             // width="720"
@@ -231,35 +231,35 @@ const Decks = () => {
         </div>
         <div className={cn(styles.decks__grid, styles['decks__grid--margin'])}>
           <img
-            src="/slide21_720w.png"
+            src="/images/slide21_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide22_720w.jpg"
+            src="/images/slide22_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide23_720w.jpg"
+            src="/images/slide23_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide24_720w.jpg"
+            src="/images/slide24_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide25_720w.png"
+            src="/images/slide25_720w.png"
             alt=""
             className={styles.decks__img}
             // width="720"
@@ -268,14 +268,14 @@ const Decks = () => {
         </div>
         <div className={cn(styles.decks__grid, styles['decks__grid--margin'])}>
           <img
-            src="/slide26_720w.png"
+            src="/images/slide26_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide27_720w.png"
+            src="/images/slide27_720w.png"
             srcSet="/slide27_720w-p-500.png 500w, /slide27_720w.png 720w"
             sizes="(max-width: 479px) 24vw, (max-width: 991px) 16vw, (max-width: 1919px) 15vw, 16vw"
             alt=""
@@ -284,21 +284,21 @@ const Decks = () => {
             // height="405"
           />
           <img
-            src="/slide28_720w.jpg"
+            src="/images/slide28_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide29_720w.png"
+            src="/images/slide29_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide30_720w.jpg"
+            src="/images/slide30_720w.jpg"
             srcSet="/slide30_720w-p-500.jpeg 500w, /slide30_720w.jpg 720w"
             sizes="(max-width: 479px) 24vw, (max-width: 991px) 16vw, (max-width: 1919px) 15vw, 16vw"
             alt=""
@@ -309,35 +309,35 @@ const Decks = () => {
         </div>
         <div className={styles.decks__grid}>
           <img
-            src="/slide31_720w.jpg"
+            src="/images/slide31_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide32_720w.jpg"
+            src="/images/slide32_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide33_720w.png"
+            src="/images/slide33_720w.png"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide34_720w.jpg"
+            src="/images/slide34_720w.jpg"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
             // width="720"
             // height="405"
           />
           <img
-            src="/slide35_720w.png"
+            src="/images/slide35_720w.png"
             alt=""
             className={styles.decks__img}
             // width="720"

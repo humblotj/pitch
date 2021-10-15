@@ -39,7 +39,7 @@ const News = () => {
               </h3>
             </a>
             <img
-              src="/stealthreveal_header_thumbnail.jpg"
+              src="/images/stealthreveal_header_thumbnail.jpg"
               srcSet="/stealthreveal_header_thumbnail-p-500.jpeg 500w, /stealthreveal_header_thumbnail-p-800.jpeg 800w, /stealthreveal_header_thumbnail-p-1080.jpeg 1080w, /stealthreveal_header_thumbnail.jpg 1370w"
               sizes="(max-width: 479px) 100vw, (max-width: 767px) 77vw, (max-width: 991px) 76vw, (max-width: 1279px) 32vw, (max-width: 1919px) 29vw, 544.984375px"
               alt=""

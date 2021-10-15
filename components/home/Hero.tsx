@@ -40,7 +40,7 @@ const Hero = () => {
                   All hands on deck.
                 </h1>
                 <img
-                  src="/hero-hands.png"
+                  src="/images/hero-hands.png"
                   loading="eager"
                   alt=""
                   className={styles.hero__hand}
@@ -48,7 +48,7 @@ const Hero = () => {
                   height="2160"
                 />
                 <img
-                  src="/hero-ui_2808w.jpg"
+                  src="/images/hero-ui_2808w.jpg"
                   loading="eager"
                   alt=""
                   className={styles.hero__ui}

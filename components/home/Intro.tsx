@@ -39,7 +39,7 @@ const Intro = () => {
         <h5 className={styles['intro__logos-heading']}>Used by teams like</h5>
         <div className={styles['intro__logos-wrapper']}>
           <img
-            src="/superhuman.svg"
+            src="/images/superhuman.svg"
             alt=""
             className={cn(
               styles['intro__logo'],
@@ -49,7 +49,7 @@ const Intro = () => {
             height="16"
           />
           <img
-            src="/eyeEm.svg"
+            src="/images/eyeEm.svg"
             alt=""
             className={cn(
               styles['intro__logo'],
@@ -59,7 +59,7 @@ const Intro = () => {
             height="33"
           />
           <img
-            src="/chart-mogul.svg"
+            src="/images/chart-mogul.svg"
             alt=""
             className={cn(
               styles['intro__logo'],
@@ -69,7 +69,7 @@ const Intro = () => {
             height="26"
           />
           <img
-            src="/notion.svg"
+            src="/images/notion.svg"
             alt=""
             className={cn(
               styles['intro__logo'],
@@ -79,7 +79,7 @@ const Intro = () => {
             height="56"
           />
           <img
-            src="/dashdash.svg"
+            src="/images/dashdash.svg"
             alt=""
             className={styles.intro__logo}
             width="149"
