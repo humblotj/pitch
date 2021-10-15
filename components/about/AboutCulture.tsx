@@ -9,29 +9,31 @@ const AboutCulture = () => {
   const { loadAnimation, lottieAnimate } = useAnimation(ref, true);
 
   useEffect(() => {
-    const animation = loadAnimation(
-      teamLottie,
-      styles['about__culture-lottie'],
-    );
+    const animation = loadAnimation(teamLottie);
     lottieAnimate(animation, {
+      start: '-1120',
       duration: 14.5,
     });
   }, []);
 
   return (
-    <div ref={ref} className={styles.about__culture}>
+    <div className={styles.about__culture}>
       <div className={styles['about__culture-office']}></div>
-      <div className={styles['about__culture-lottie']}></div>
+      <div ref={ref} className={styles['about__culture-lottie']}></div>
       <div className={styles['about__culture-party']}></div>
       <img
         src="/images/otto.jpg"
         alt=""
         className={styles['about__culture-photo']}
+        width="528"
+        height="480"
       />
       <img
         src="/images/office2.jpg"
         alt=""
         className={styles['about__culture-photo']}
+        width="528"
+        height="480"
       />
     </div>
   );

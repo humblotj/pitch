@@ -10,6 +10,8 @@ const AboutHeading = () => {
         src="/images/confetti.png"
         alt=""
         className={styles.about__confetti}
+        width="2112"
+        height="1142"
       />
     </>
   );

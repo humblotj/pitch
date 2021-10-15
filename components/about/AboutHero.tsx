@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
 import cn from 'classnames';
 
 import styles from './AboutHero.module.css';
@@ -7,7 +6,7 @@ import useAnimation from '../../hooks/useAnimation';
 
 const AboutHero = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { animateTo } = useAnimation(ref);
+  const { animateTo } = useAnimation();
 
   useEffect(() => {
     animateTo('div-animated', {
@@ -16,15 +15,6 @@ const AboutHero = () => {
       end: 100,
       bodySelector: true,
     });
-    // gsap.to(document.body.querySelectorAll('.div-animated'), {
-    //   y: '-80em',
-    //   scrollTrigger: {
-    //     trigger: ref.current,
-    //     scrub: true,
-    //     start: '25% 25%',
-    //     end: '+=504',
-    //   },
-    // });
   }, []);
 
   return (
@@ -38,6 +28,8 @@ const AboutHero = () => {
         src="/images/gurl.png"
         alt=""
         className={styles['about-hero__image']}
+        width="2560"
+        height="1963"
       />
     </div>
   );

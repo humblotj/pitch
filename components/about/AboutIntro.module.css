@@ -4,7 +4,6 @@
     padding: 103px 10vw 95px;
     flex-direction: column;
     align-items: center;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(73%, #fff), to(#f6f6f6));
     background-image: linear-gradient(180deg, #fff 73%, #f6f6f6);
 }
 

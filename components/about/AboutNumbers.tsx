@@ -52,30 +52,40 @@ const AboutNumbers = () => {
                 loading="lazy"
                 alt=""
                 className={styles['about-numbers__star']}
+                width="36"
+                height="34"
               />
               <img
                 src="/images/star.svg"
                 loading="lazy"
                 alt=""
                 className={styles['about-numbers__star']}
+                width="36"
+                height="34"
               />
               <img
                 src="/images/star.svg"
                 loading="lazy"
                 alt=""
                 className={styles['about-numbers__star']}
+                width="36"
+                height="34"
               />
               <img
                 src="/images/star.svg"
                 loading="lazy"
                 alt=""
                 className={styles['about-numbers__star']}
+                width="36"
+                height="34"
               />
               <img
                 src="/images/star.svg"
                 loading="lazy"
                 alt=""
                 className={styles['about-numbers__star']}
+                width="36"
+                height="34"
               />
             </div>
             <div className={styles['about-numbers__rating-link']}>

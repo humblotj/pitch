@@ -16,6 +16,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--50space'],
             )}
+            width="189"
+            height="25"
           />
           <div className={styles['about__investors-name']}>Joshua Kushner</div>
           <div className={styles['about__investors-info']}>
@@ -31,6 +33,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--34space'],
             )}
+            width="74"
+            height="59"
           />
           <div className={styles['about__investors-name']}>Neil Rimer</div>
           <div className={styles['about__investors-info']}>
@@ -46,6 +50,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--34space'],
             )}
+            width="90"
+            height="69"
           />
           <div className={styles['about__investors-name']}>
             Ciarán O&#x27;Leary
@@ -63,6 +69,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--50space'],
             )}
+            width="126"
+            height="32"
           />
           <div className={styles['about__investors-name']}>Slack Fund</div>
         </div>
@@ -75,6 +83,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--50space'],
             )}
+            width="120"
+            height="27"
           />
           <div className={styles['about__investors-name']}>Eric Yuan</div>
           <div className={styles['about__investors-info']}>Founder of Zoom</div>
@@ -88,6 +98,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--27space'],
             )}
+            width="72"
+            height="72"
           />
           <div className={styles['about__investors-name']}>
             Kevin Systrom &amp; Mike Krieger
@@ -105,6 +117,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--27space'],
             )}
+            width="72"
+            height="72"
           />
           <div className={styles['about__investors-name']}>Rahul Vohra</div>
           <div className={styles['about__investors-info']}>
@@ -120,6 +134,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--27space'],
             )}
+            width="72"
+            height="72"
           />
           <div className={styles['about__investors-name']}>
             Andrew Wilkinson
@@ -137,6 +153,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--27space'],
             )}
+            width="48"
+            height="72"
           />
           <div className={styles['about__investors-name']}>Koen Bok</div>
           <div className={styles['about__investors-info']}>
@@ -152,6 +170,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--19space'],
             )}
+            width="88"
+            height="88"
           />
           <div className={styles['about__investors-name']}>Olivier Pomel</div>
           <div className={styles['about__investors-info']}>
@@ -167,6 +187,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--19space'],
             )}
+            width="74"
+            height="90"
           />
           <div className={styles['about__investors-name']}>Simon Willnauer</div>
           <div className={styles['about__investors-info']}>
@@ -182,6 +204,8 @@ const AboutInvestors = () => {
               styles['about__investors-logo'],
               styles['about__investors-logo--50space'],
             )}
+            width="193"
+            height="22"
           />
           <div className={styles['about__investors-name']}>Frank Thelen</div>
           <div className={styles['about__investors-info']}>

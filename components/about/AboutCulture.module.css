@@ -1,18 +1,14 @@
 .about__culture {
-    display: -ms-grid;
     display: grid;
     max-width: 100em;
     grid-auto-columns: 1fr;
     grid-column-gap: 15px;
     grid-row-gap: 15px;
-    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    -ms-grid-rows: auto auto;
     grid-template-rows: auto auto;
 }
 
 .about__culture-lottie {
-    background-color: red;
     width: 100%;
 }
 

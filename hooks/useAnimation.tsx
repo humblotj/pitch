@@ -4,14 +4,14 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import lottie, { AnimationItem } from 'lottie-web';
 
 const useAnimation = (
-  ref: RefObject<HTMLDivElement>,
+  ref?: RefObject<HTMLDivElement>,
   animationStartEntering = false,
 ) => {
   const timerRef = useRef<any>(null);
 
   const loadAnimation = useCallback(
     (animationData: any, className?: string) => {
-      const element = ref.current;
+      const element = ref ? ref.current : document.body;
       if (!element) {
         return;
       }
@@ -41,7 +41,7 @@ const useAnimation = (
         loop = false,
         delay = 0,
       }: {
-        start?: number;
+        start?: number | string;
         end?: number;
         duration?: number;
         once?: boolean;
@@ -50,7 +50,7 @@ const useAnimation = (
         delay?: number;
       },
     ) => {
-      const element = ref.current;
+      const element = ref ? ref.current : document.body;
       if (!element || !animation) {
         return;
       }
@@ -59,27 +59,30 @@ const useAnimation = (
         animation.loop = true;
       }
 
-      const animationStart = animationStartEntering
-        ? `${
-            (element.offsetHeight + window.innerHeight) * (start / 100)
-          } bottom`
-        : `${start}% ${start}%`;
-      const animationEnd = animationStartEntering
-        ? `+=${
-            (element.offsetHeight + window.innerHeight) *
-            ((Math.max(end, start) - start) / 100)
-          }`
-        : `+=${element.offsetHeight * ((Math.max(end, start) - start) / 100)}`;
+      let animationStart = start;
 
-      // console.log(
-      //   (element.offsetHeight + window.innerHeight) * (start / 100),
-      //   animationStart,
-      //   animationEnd,
-      // );
+      if (typeof start === 'number') {
+        animationStart = animationStartEntering
+          ? `${
+              (element.offsetHeight + window.innerHeight) * (start / 100)
+            } bottom`
+          : `${start}% ${start}%`;
+      }
+      let animationEnd = '+=0';
+      if (typeof start === 'number') {
+        animationEnd = animationStartEntering
+          ? `+=${
+              (element.offsetHeight + window.innerHeight) *
+              ((Math.max(end, start) - start) / 100)
+            }`
+          : `+=${
+              element.offsetHeight * ((Math.max(end, start) - start) / 100)
+            }`;
+      }
 
       ScrollTrigger.create({
         trigger: element,
-        scrub: false,
+        scrub: scrub && !once && !duration,
         start: animationStart,
         end: animationEnd,
         once,
@@ -124,7 +127,7 @@ const useAnimation = (
           }
         | gsap.TweenVars,
     ) => {
-      const element = ref.current;
+      const element = ref ? ref.current : document.body;
       if (!element) {
         return;
       }
@@ -194,7 +197,7 @@ const useAnimation = (
           }
         | gsap.TweenVars,
     ) => {
-      const element = ref.current;
+      const element = ref ? ref.current : document.body;
       if (!element) {
         return;
       }

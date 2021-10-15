@@ -13,6 +13,8 @@ import AboutParagraph1 from '../../components/about/AboutParagraph1';
 import AboutParagraph2 from '../../components/about/AboutParagraph2';
 import AboutTeam from '../../components/about/AboutTeam';
 import Nav from '../../components/common/Nav';
+import Cta from '../../components/common/Cta';
+import Footer from '../../components/common/Footer';
 
 const About: NextPage = () => {
   return (
@@ -31,6 +33,8 @@ const About: NextPage = () => {
         </div>
         <AboutNumbers />
         <AboutJobs />
+        <Cta />
+        <Footer />
       </div>
     </>
   );

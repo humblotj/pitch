@@ -6,7 +6,6 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background-image: -webkit-gradient(linear, left top, right top, from(#4966f7), to(#7756fd));
     background-image: linear-gradient(90deg, #4966f7, #7756fd);
 }
 
