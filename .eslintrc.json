@@ -17,5 +17,7 @@
   "plugins": [
     "react"
   ],
-  "rules": {}
+  "rules": {
+    "@next/next/no-img-element": 0
+  }
 }

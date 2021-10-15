@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import cn from 'classnames';
 
 import styles from './Hero.module.css';
@@ -7,7 +6,7 @@ import useAnimation from '../../hooks/useAnimation';
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { animateFromTo, animateTo } = useAnimation(ref);
+  const { animateFromTo } = useAnimation(ref);
 
   useEffect(() => {
     animateFromTo(styles.hero__ui, {

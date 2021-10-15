@@ -67,13 +67,19 @@ const useAnimation = (
       const animationEnd = animationStartEntering
         ? `+=${
             (element.offsetHeight + window.innerHeight) *
-            ((Math.min(end, start) - start) / 100)
+            ((Math.max(end, start) - start) / 100)
           }`
-        : `+=${element.offsetHeight * ((Math.min(end, start) - start) / 100)}`;
+        : `+=${element.offsetHeight * ((Math.max(end, start) - start) / 100)}`;
+
+      // console.log(
+      //   (element.offsetHeight + window.innerHeight) * (start / 100),
+      //   animationStart,
+      //   animationEnd,
+      // );
 
       ScrollTrigger.create({
         trigger: element,
-        scrub: scrub && !once,
+        scrub: false,
         start: animationStart,
         end: animationEnd,
         once,
@@ -96,68 +102,25 @@ const useAnimation = (
         to,
         start,
         end,
-        immediateRender = true,
-      }: {
-        from: gsap.TweenVars;
-        to: gsap.TweenVars;
-        start: number;
-        end: number;
-        immediateRender?: boolean;
-      },
-    ) => {
-      const element = ref.current;
-      if (!element) {
-        return;
-      }
-
-      const animationStart = animationStartEntering
-        ? `${
-            (element.offsetHeight + window.innerHeight) * (start / 100)
-          } bottom`
-        : `${start}% ${start}%`;
-      const animationEnd = animationStartEntering
-        ? `+=${
-            (element.offsetHeight + window.innerHeight) * ((end - start) / 100)
-          }`
-        : `+=${element.offsetHeight * ((end - start) / 100)}`;
-
-      gsap.fromTo(element.querySelectorAll('.' + className), from, {
-        ...to,
-        immediateRender,
-        scrollTrigger: {
-          trigger: element,
-          scrub: true,
-          start: animationStart,
-          end: animationEnd,
-        },
-      });
-    },
-    [ref, animationStartEntering],
-  );
-
-  const animateTo = useCallback(
-    (
-      className: string,
-      {
-        to,
-        start = 0,
-        end = 0,
         duration,
         immediateRender = true,
         once = false,
         scrub = true,
         toggleActions = undefined,
+        bodySelector = false,
         ...rest
       }:
         | {
+            from: gsap.TweenVars;
             to: gsap.TweenVars;
-            start?: number;
-            end?: number;
+            start: number;
+            end: number;
             duration?: number;
             immediateRender?: boolean;
             once?: boolean;
             scrub?: boolean;
             toggleActions?: string;
+            bodySelector: boolean;
           }
         | gsap.TweenVars,
     ) => {
@@ -174,39 +137,67 @@ const useAnimation = (
       const animationEnd = animationStartEntering
         ? `+=${
             (element.offsetHeight + window.innerHeight) *
-            ((Math.min(end, start) - start) / 100)
+            ((Math.max(end, start) - start) / 100)
           }`
-        : `+=${element.offsetHeight * ((Math.min(end, start) - start) / 100)}`;
+        : `+=${element.offsetHeight * ((Math.max(end, start) - start) / 100)}`;
 
-      return gsap.to(element.querySelectorAll('.' + className), {
+      const targets = (bodySelector ? document.body : element).querySelectorAll(
+        '.' + className,
+      );
+      const vars = {
         ...to,
         immediateRender,
         scrollTrigger: {
           trigger: element,
-          scrub: scrub && !once,
+          scrub: scrub && !once && !duration,
           start: animationStart,
           end: animationEnd,
           once,
           toggleActions,
         },
-        duration,
         ...rest,
-      });
+      };
+      if (duration) {
+        vars.duration = duration;
+      }
+
+      gsap.fromTo(targets, from, vars);
     },
     [ref, animationStartEntering],
   );
 
-  const timeline = useCallback(
-    ({
-      start = 0,
-      end = 0,
-      once = false,
-    }: {
-      start?: number;
-      end?: number;
-      once?: boolean;
-    }) => {
-      const element = ref.current || document.body;
+  const animateTo = useCallback(
+    (
+      className: string,
+      {
+        to,
+        start = 0,
+        end = 0,
+        duration,
+        immediateRender = true,
+        once = false,
+        scrub = true,
+        toggleActions = 'play none none none',
+        bodySelector = false,
+        ...rest
+      }:
+        | {
+            to: gsap.TweenVars;
+            start?: number;
+            end?: number;
+            duration?: number;
+            immediateRender?: boolean;
+            once?: boolean;
+            scrub?: boolean;
+            toggleActions?: string;
+            bodySelector: boolean;
+          }
+        | gsap.TweenVars,
+    ) => {
+      const element = ref.current;
+      if (!element) {
+        return;
+      }
 
       const animationStart = animationStartEntering
         ? `${
@@ -216,19 +207,33 @@ const useAnimation = (
       const animationEnd = animationStartEntering
         ? `+=${
             (element.offsetHeight + window.innerHeight) *
-            ((Math.min(end, start) - start) / 100)
+            ((Math.max(end, start) - start) / 100)
           }`
-        : `+=${element.offsetHeight * ((Math.min(end, start) - start) / 100)}`;
+        : `+=${element.offsetHeight * ((Math.max(end, start) - start) / 100)}`;
 
-      return gsap.timeline({
+      const targets = (bodySelector ? document.body : element).querySelectorAll(
+        '.' + className,
+      );
+
+      const vars = {
+        ...to,
+        immediateRender,
         scrollTrigger: {
           trigger: element,
-          scrub: !once,
+          scrub: scrub && !once && !duration,
           start: animationStart,
           end: animationEnd,
           once,
+          toggleActions,
         },
-      });
+        ...rest,
+      };
+
+      if (duration) {
+        vars.duration = duration;
+      }
+
+      return gsap.to(targets, vars);
     },
     [ref, animationStartEntering],
   );
@@ -238,7 +243,6 @@ const useAnimation = (
     lottieAnimate,
     animateFromTo,
     animateTo,
-    timeline,
   };
 };
 

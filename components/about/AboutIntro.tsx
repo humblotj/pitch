@@ -1,8 +1,12 @@
+import cn from 'classnames';
+
+import styles from './AboutIntro.module.css';
+
 const AboutIntro = () => {
   return (
-    <div className="about-intro wf-section">
-      <div className="about-intro__wrapper">
-        <p className="about-intro__paragraph">
+    <div className={cn(styles['about-intro'], 'wf-section')}>
+      <div className={styles['about-intro__wrapper']}>
+        <p className={styles['about-intro__paragraph"']}>
           Every day, ideas are born. Ideas to start a business. Change a
           community. Transform the world. But ideas alone are not enough.
           <br />‍<br />

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 
@@ -9,21 +8,19 @@ import collaborationLottie from '../../assets/lottie/collaboration.json';
 const Intro = () => {
   const workflowRef = useRef<HTMLDivElement>(null);
   const lottieRef = useRef<HTMLDivElement>(null);
-  const { timeline } = useAnimation(workflowRef, true);
+  const { animateTo } = useAnimation(workflowRef, true);
   const { loadAnimation, lottieAnimate } = useAnimation(lottieRef, true);
 
   useEffect(() => {
-    const tl = timeline({ start: 10, once: true });
-
-    tl.to('.' + styles['intro__workflow-heading'], {
-      opacity: 1,
-      y: 0,
+    animateTo(styles['intro__workflow-text'] + '> *', {
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+      start: 10,
       duration: 0.3,
-    });
-    tl.to('.' + styles['intro__workflow-paragraph'], {
-      opacity: 1,
-      y: 0,
-      duration: 0.3,
+      once: true,
+      stagger: 0.3,
     });
 
     const collaborationAnimation = loadAnimation(collaborationLottie);

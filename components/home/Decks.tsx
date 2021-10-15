@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import cn from 'classnames';
 
 import styles from './Decks.module.css';
@@ -8,20 +7,19 @@ import useAnimation from '../../hooks/useAnimation';
 const Decks = () => {
   const decksTextRef = useRef<HTMLDivElement>(null);
   const decksWrapperRef = useRef<HTMLDivElement>(null);
-  const { timeline } = useAnimation(decksTextRef, true);
+  const { animateTo } = useAnimation(decksTextRef, true);
   const { animateFromTo } = useAnimation(decksWrapperRef, true);
 
   useEffect(() => {
-    const tl = timeline({ start: 10, once: true });
-    tl.to('.' + styles['decks__text-heading'], {
-      opacity: 1,
-      y: 0,
+    animateTo(styles.decks__text + '> *', {
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+      start: 10,
       duration: 0.3,
-    });
-    tl.to('.' + styles['decks__text-paragraph'], {
-      opacity: 1,
-      y: 0,
-      duration: 0.3,
+      once: true,
+      stagger: 0.3,
     });
 
     animateFromTo(styles.decks__grid + ':nth-child(1)', {
@@ -276,7 +274,7 @@ const Decks = () => {
           />
           <img
             src="/images/slide27_720w.png"
-            srcSet="/slide27_720w-p-500.png 500w, /slide27_720w.png 720w"
+            srcSet="/images/slide27_720w-p-500.png 500w, /images/slide27_720w.png 720w"
             sizes="(max-width: 479px) 24vw, (max-width: 991px) 16vw, (max-width: 1919px) 15vw, 16vw"
             alt=""
             className={cn(styles.decks__img, styles['decks__img--margin'])}
@@ -299,7 +297,7 @@ const Decks = () => {
           />
           <img
             src="/images/slide30_720w.jpg"
-            srcSet="/slide30_720w-p-500.jpeg 500w, /slide30_720w.jpg 720w"
+            srcSet="/images/slide30_720w-p-500.jpeg 500w, /images/slide30_720w.jpg 720w"
             sizes="(max-width: 479px) 24vw, (max-width: 991px) 16vw, (max-width: 1919px) 15vw, 16vw"
             alt=""
             className={styles.decks__img}

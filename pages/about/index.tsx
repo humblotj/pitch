@@ -1,49 +1,31 @@
 import type { NextPage } from 'next';
+import cn from 'classnames';
+
+import styles from './About.module.css';
 import AboutCulture from '../../components/about/AboutCulture';
+import AboutHeading from '../../components/about/AboutHeading';
 import AboutHero from '../../components/about/AboutHero';
 import AboutIntro from '../../components/about/AboutIntro';
 import AboutInvestors from '../../components/about/AboutInvestors';
 import AboutJobs from '../../components/about/AboutJobs';
 import AboutNumbers from '../../components/about/AboutNumbers';
+import AboutParagraph1 from '../../components/about/AboutParagraph1';
+import AboutParagraph2 from '../../components/about/AboutParagraph2';
 import AboutTeam from '../../components/about/AboutTeam';
+import Nav from '../../components/common/Nav';
 
 const About: NextPage = () => {
   return (
     <>
+      <Nav />
       <AboutHero />
-      <div className="div-animated">
+      <div className={cn(styles['div-animated'], 'div-animated')}>
         <AboutIntro />
-        <div className="about wf-section">
-          <div className="about__heading-wrapper">
-            <h1 className="about__heading">Pitch is a new beginning</h1>
-          </div>
-          <img src="/images//confetti.png" alt="" className="about__confetti" />
-          <div className="about__paragraph1-wrapper">
-            <p className="about__paragraph1">
-              When we needed Pitch, it wasn’t there. So we built it. We
-              rethought presentations from the ground up: how we create them,
-              how we use them, and how we share them. Pitch is answering years
-              of frustrations about how hard it is to bring ideas to life,
-              easily and in style.
-              <br />
-              <br />
-              We are a team of eight co-founders who previously built
-              Wunderlist. Pitch is the modern presentation software we wish we
-              had: designed to improve the way presentations are crafted and
-              knowledge is shared.
-            </p>
-          </div>
+        <div className={cn(styles.about, 'wf-section')}>
+          <AboutHeading />
+          <AboutParagraph1 />
           <AboutTeam />
-          <div className="about__paragraph2-wrapper">
-            <p className="about__paragraph2">
-              We’re a group of people who love collaborating to create
-              well-crafted, delightful products. For us, the best part of
-              building a company is taking an idea that everyone believes in and
-              working together to turn that into a reality. That&#x27;s why
-              we&#x27;re excited about Pitch: We&#x27;re creating a product that
-              helps people work better together.
-            </p>
-          </div>
+          <AboutParagraph2 />
           <AboutCulture />
           <AboutInvestors />
         </div>

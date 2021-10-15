@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import cn from 'classnames';
 
 import styles from './News.module.css';
@@ -9,19 +8,18 @@ import useAnimation from '../../hooks/useAnimation';
 
 const News = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { timeline } = useAnimation(ref, true);
+  const { animateTo } = useAnimation(ref, true);
 
   useEffect(() => {
-    const tl = timeline({ start: 10, once: true });
-    tl.to('.' + styles.news__card + ':nth-child(1)', {
-      opacity: 1,
-      y: 0,
+    animateTo(styles.news__wrapper + '> *', {
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+      start: 10,
       duration: 0.3,
-    });
-    tl.to('.' + styles.news__card + ':nth-child(2)', {
-      opacity: 1,
-      y: 0,
-      duration: 0.3,
+      once: true,
+      stagger: 0.3,
     });
   }, []);
 
@@ -40,7 +38,7 @@ const News = () => {
             </a>
             <img
               src="/images/stealthreveal_header_thumbnail.jpg"
-              srcSet="/stealthreveal_header_thumbnail-p-500.jpeg 500w, /stealthreveal_header_thumbnail-p-800.jpeg 800w, /stealthreveal_header_thumbnail-p-1080.jpeg 1080w, /stealthreveal_header_thumbnail.jpg 1370w"
+              srcSet="/images/stealthreveal_header_thumbnail-p-500.jpeg 500w, /images/stealthreveal_header_thumbnail-p-800.jpeg 800w, /images/stealthreveal_header_thumbnail-p-1080.jpeg 1080w, /images/stealthreveal_header_thumbnail.jpg 1370w"
               sizes="(max-width: 479px) 100vw, (max-width: 767px) 77vw, (max-width: 991px) 76vw, (max-width: 1279px) 32vw, (max-width: 1919px) 29vw, 544.984375px"
               alt=""
               className={styles['news__card-image']}

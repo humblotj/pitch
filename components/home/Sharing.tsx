@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 
@@ -8,21 +7,19 @@ import useAnimation from '../../hooks/useAnimation';
 const Sharing = () => {
   const sharingTextRef = useRef<HTMLDivElement>(null);
   const sharingPlaneWrapperRef = useRef<HTMLDivElement>(null);
-  const { timeline } = useAnimation(sharingTextRef, true);
+  const { animateTo } = useAnimation(sharingTextRef, true);
   const { animateFromTo } = useAnimation(sharingPlaneWrapperRef, true);
 
   useEffect(() => {
-    const tl = timeline({ start: 10, once: true });
-
-    tl.to('.' + styles['sharing__text-heading'], {
-      opacity: 1,
-      y: 0,
+    animateTo(styles.sharing__text + '> *', {
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+      start: 10,
       duration: 0.3,
-    });
-    tl.to('.' + styles['sharing__text-paragraph'], {
-      opacity: 1,
-      y: 0,
-      duration: 0.3,
+      once: true,
+      stagger: 0.3,
     });
 
     animateFromTo(styles.sharing__plane, {

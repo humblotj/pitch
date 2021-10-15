@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import cn from 'classnames';
 
 import styles from './Testimonials.module.css';
