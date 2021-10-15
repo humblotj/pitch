@@ -31,31 +31,31 @@ const AboutNumbers = () => {
           <a href="#" className="about-numbers__rating w-inline-block">
             <div className="about-numbers__stars-wrapper">
               <img
-                src="images/star.svg"
+                src="/images//star.svg"
                 loading="lazy"
                 alt=""
                 className="about-numbers__star"
               />
               <img
-                src="images/star.svg"
+                src="/images//star.svg"
                 loading="lazy"
                 alt=""
                 className="about-numbers__star"
               />
               <img
-                src="images/star.svg"
+                src="/images//star.svg"
                 loading="lazy"
                 alt=""
                 className="about-numbers__star"
               />
               <img
-                src="images/star.svg"
+                src="/images//star.svg"
                 loading="lazy"
                 alt=""
                 className="about-numbers__star"
               />
               <img
-                src="images/star.svg"
+                src="/images//star.svg"
                 loading="lazy"
                 alt=""
                 className="about-numbers__star"

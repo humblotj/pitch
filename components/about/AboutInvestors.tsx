@@ -6,7 +6,7 @@ const AboutInvestors = () => {
       <div className="about__investors-container">
         <div className="about__investors-wrapper">
           <img
-            src="images/thrive.svg"
+            src="/images//thrive.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--50space"
@@ -16,7 +16,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/index.svg"
+            src="/images//index.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--34space"
@@ -26,7 +26,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/blueyard.svg"
+            src="/images//blueyard.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--34space"
@@ -36,7 +36,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/slack.svg"
+            src="/images//slack.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--50space"
@@ -45,7 +45,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/zoom.svg"
+            src="/images//zoom.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--50space"
@@ -55,7 +55,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/instagram.svg"
+            src="/images//instagram.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--27space"
@@ -67,7 +67,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/superhuman.svg"
+            src="/images//superhuman.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--27space"
@@ -77,7 +77,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/metalab.svg"
+            src="/images//metalab.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--27space"
@@ -87,7 +87,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/framer.svg"
+            src="/images//framer.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--27space"
@@ -97,7 +97,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/datadog.svg"
+            src="/images//datadog.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--19space"
@@ -107,7 +107,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/elastic.svg"
+            src="/images//elastic.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--19space"
@@ -117,7 +117,7 @@ const AboutInvestors = () => {
         </div>
         <div className="about__investors-wrapper">
           <img
-            src="images/freigeist.svg"
+            src="/images//freigeist.svg"
             loading="lazy"
             alt=""
             className="about__investors-logo about__investors-logo--50space"

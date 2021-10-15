@@ -17,7 +17,7 @@ const About: NextPage = () => {
           <div className="about__heading-wrapper">
             <h1 className="about__heading">Pitch is a new beginning</h1>
           </div>
-          <img src="images/confetti.png" alt="" className="about__confetti" />
+          <img src="/images//confetti.png" alt="" className="about__confetti" />
           <div className="about__paragraph1-wrapper">
             <p className="about__paragraph1">
               When we needed Pitch, it wasn’t there. So we built it. We

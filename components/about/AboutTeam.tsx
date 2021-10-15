@@ -54,7 +54,7 @@ const AboutTeam = () => {
           </div>
           <div className="about__overlay-teammember"></div>
           <img
-            src="images/christian.jpg"
+            src="/images//christian.jpg"
             width="752"
             alt=""
             className="about__photo-teammember"
@@ -69,7 +69,7 @@ const AboutTeam = () => {
           </div>
           <div className="about__overlay-teammember"></div>
           <img
-            src="images/charlette.jpg"
+            src="/images//charlette.jpg"
             alt=""
             className="about__photo-teammember"
           />
@@ -106,7 +106,7 @@ const AboutTeam = () => {
           </div>
           <div className="about__overlay-teammember"></div>
           <img
-            src="images/jan.jpg"
+            src="/images//jan.jpg"
             alt=""
             className="about__photo-teammember"
           />
@@ -143,7 +143,7 @@ const AboutTeam = () => {
           </div>
           <div className="about__overlay-teammember"></div>
           <img
-            src="images/eric.jpg"
+            src="/images//eric.jpg"
             alt=""
             className="about__photo-teammember"
           />
@@ -158,7 +158,7 @@ const AboutTeam = () => {
           </div>
           <div className="about__overlay-teammember"></div>
           <img
-            src="images/marvin.jpg"
+            src="/images//marvin.jpg"
             alt=""
             className="about__photo-teammember"
           />
@@ -196,7 +196,7 @@ const AboutTeam = () => {
           </div>
           <div className="about__overlay-teammember"></div>
           <img
-            src="images/adam.jpg"
+            src="/images//adam.jpg"
             width="771"
             alt=""
             className="about__photo-teammember"
@@ -237,7 +237,7 @@ const AboutTeam = () => {
           </div>
           <div className="about__overlay-teammember"></div>
           <img
-            src="images/vanessa.jpg"
+            src="/images//vanessa.jpg"
             alt=""
             className="about__photo-teammember"
           />
@@ -278,7 +278,7 @@ const AboutTeam = () => {
           </div>
           <div className="about__overlay-teammember"></div>
           <img
-            src="images/misha.jpg"
+            src="/images//misha.jpg"
             alt=""
             className="about__photo-teammember"
           />
