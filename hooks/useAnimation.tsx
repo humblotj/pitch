@@ -168,8 +168,6 @@ const useAnimation = (
         vars.duration = duration;
       }
 
-      console.log(vars);
-
       gsap.fromTo(targets, from, vars);
     },
     [ref, animationStartEntering],
