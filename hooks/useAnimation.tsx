@@ -111,19 +111,22 @@ const useAnimation = (
         scrub = true,
         toggleActions = undefined,
         bodySelector = false,
-        ...rest
-      }: {
-        from: gsap.TweenVars;
-        to: gsap.TweenVars;
-        start: number;
-        end: number;
-        duration?: number;
-        immediateRender?: boolean;
-        once?: boolean;
-        scrub?: boolean;
-        toggleActions?: string;
-        bodySelector?: boolean;
-      },
+        stagger,
+      }:
+        | {
+            from: gsap.TweenVars;
+            to: gsap.TweenVars;
+            start: number;
+            end: number;
+            duration?: number;
+            immediateRender?: boolean;
+            once?: boolean;
+            scrub?: boolean;
+            toggleActions?: string;
+            bodySelector?: boolean;
+            stagger: number;
+          }
+        | gsap.TweenVars,
     ) => {
       const element = ref ? ref.current : document.body;
       if (!element) {
@@ -156,7 +159,7 @@ const useAnimation = (
           once,
           toggleActions,
         },
-        ...rest,
+        stagger,
       };
       if (duration) {
         vars.duration = duration;
@@ -180,18 +183,21 @@ const useAnimation = (
         scrub = true,
         toggleActions = 'play none none none',
         bodySelector = false,
-        ...rest
-      }: {
-        to: gsap.TweenVars;
-        start?: number;
-        end?: number;
-        duration?: number;
-        immediateRender?: boolean;
-        once?: boolean;
-        scrub?: boolean;
-        toggleActions?: string;
-        bodySelector?: boolean;
-      },
+        stagger,
+      }:
+        | {
+            to: gsap.TweenVars;
+            start?: number;
+            end?: number;
+            duration?: number;
+            immediateRender?: boolean;
+            once?: boolean;
+            scrub?: boolean;
+            toggleActions?: string;
+            bodySelector?: boolean;
+            stagger?: number;
+          }
+        | gsap.TweenVars,
     ) => {
       const element = ref ? ref.current : document.body;
       if (!element) {
@@ -225,7 +231,7 @@ const useAnimation = (
           once,
           toggleActions,
         },
-        ...rest,
+        stagger,
       };
 
       if (duration) {
