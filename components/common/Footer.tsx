@@ -1,3 +1,4 @@
+import type { NextPage } from 'next';
 import Link from 'next/link';
 import cn from 'classnames';
 
@@ -9,7 +10,7 @@ import Facebook from '../../assets/icons/facebook.svg';
 import Linkedin from '../../assets/icons/linkedin.svg';
 import Instagram from '../../assets/icons/instagram.svg';
 
-const Footer = () => {
+const Footer: NextPage = () => {
   return (
     <div className={cn(styles.footer, 'wf-section')}>
       <div className={styles.footer__wrapper}>

@@ -160,6 +160,14 @@
 }
 
 @media screen and (max-width: 991px) {
+    .about__name-teammember {
+        font-size: 1.3em;
+        line-height: 1em;
+    }
+    .about__role-teammember {
+        font-size: 1em;
+        line-height: 1.5em;
+    }
     #w-node-_52689639-77f9-af09-ed7f-733cbb12f40d-bb12f40b {
         grid-area: Area-4;
     }

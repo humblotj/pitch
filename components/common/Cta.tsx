@@ -1,8 +1,9 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import styles from './Cta.module.css';
 
-const Cta = () => {
+const Cta: NextPage = () => {
   return (
     <div className={cn(styles.cta, 'wf-section')}>
       <div className={styles.cta__container}>

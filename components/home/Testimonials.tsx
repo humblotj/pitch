@@ -1,8 +1,9 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import styles from './Testimonials.module.css';
 
-const Testimonials = () => {
+const Testimonials: NextPage = () => {
   return (
     <div className={cn(styles.testimonials, 'wf-section')}>
       <h2 className={styles.testimonials__heading}>What others are saying</h2>

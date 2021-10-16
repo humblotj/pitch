@@ -1,3 +1,4 @@
+import type { NextPage } from 'next';
 import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 
@@ -5,7 +6,7 @@ import styles from './Intro.module.css';
 import useAnimation from '../../hooks/useAnimation';
 import collaborationLottie from '../../assets/lottie/collaboration.json';
 
-const Intro = () => {
+const Intro: NextPage = () => {
   const workflowRef = useRef<HTMLDivElement>(null);
   const lottieRef = useRef<HTMLDivElement>(null);
   const { animateTo } = useAnimation(workflowRef, true);

@@ -1,3 +1,4 @@
+import type { NextPage } from 'next';
 import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 
@@ -5,7 +6,7 @@ import styles from './Formating.module.css';
 import useAnimation from '../../hooks/useAnimation';
 import snapLottie from '../../assets/lottie/snap.json';
 
-const Formating = () => {
+const Formating: NextPage = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { animateTo, loadAnimation, lottieAnimate } = useAnimation(ref, true);
 

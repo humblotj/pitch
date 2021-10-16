@@ -1,8 +1,9 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import styles from './AboutJobs.module.css';
 
-const AboutJobs = () => {
+const AboutJobs: NextPage = () => {
   return (
     <section id="hiring" className={cn(styles['about-jobs'], 'wf-section')}>
       <div className={styles['about-jobs__mission']}>

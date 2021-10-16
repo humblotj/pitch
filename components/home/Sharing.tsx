@@ -1,10 +1,11 @@
+import type { NextPage } from 'next';
 import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 
 import styles from './Sharing.module.css';
 import useAnimation from '../../hooks/useAnimation';
 
-const Sharing = () => {
+const Sharing: NextPage = () => {
   const sharingTextRef = useRef<HTMLDivElement>(null);
   const sharingPlaneWrapperRef = useRef<HTMLDivElement>(null);
   const { animateTo } = useAnimation(sharingTextRef, true);

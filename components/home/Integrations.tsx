@@ -1,3 +1,4 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 import { useEffect, useRef } from 'react';
 
@@ -5,7 +6,7 @@ import styles from './Integrations.module.css';
 import useAnimation from '../../hooks/useAnimation';
 import integrationsLottie from '../../assets/lottie/integrations.json';
 
-const Integrations = () => {
+const Integrations: NextPage = () => {
   const integrationsTextRef = useRef<HTMLDivElement>(null);
   const lottieRef = useRef<HTMLDivElement>(null);
   const { animateTo } = useAnimation(integrationsTextRef, true);

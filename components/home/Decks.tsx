@@ -1,10 +1,11 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import styles from './Decks.module.css';
 import { useEffect, useRef } from 'react';
 import useAnimation from '../../hooks/useAnimation';
 
-const Decks = () => {
+const Decks: NextPage = () => {
   const decksTextRef = useRef<HTMLDivElement>(null);
   const decksWrapperRef = useRef<HTMLDivElement>(null);
   const { animateTo } = useAnimation(decksTextRef, true);

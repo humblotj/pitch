@@ -1,8 +1,9 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import styles from './AboutIntro.module.css';
 
-const AboutIntro = () => {
+const AboutIntro: NextPage = () => {
   return (
     <div className={cn(styles['about-intro'], 'wf-section')}>
       <div className={styles['about-intro__wrapper']}>

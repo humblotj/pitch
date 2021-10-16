@@ -1,3 +1,4 @@
+import type { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
@@ -10,7 +11,7 @@ import DropdownArrow from '../../assets/icons/dropdown-arrow.svg';
 import IconExpand from '../../assets/icons/icon-expand.svg';
 import { useRouter } from 'next/dist/client/router';
 
-const Nav = () => {
+const Nav: NextPage = () => {
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const [dropDownOpen, setDropDownOpen] = useState(false);

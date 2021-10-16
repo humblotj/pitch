@@ -1,10 +1,11 @@
+import type { NextPage } from 'next';
 import { useEffect, useRef } from 'react';
 
 import styles from './AboutCulture.module.css';
 import useAnimation from '../../hooks/useAnimation';
 import teamLottie from '../../assets/lottie/team.json';
 
-const AboutCulture = () => {
+const AboutCulture: NextPage = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { loadAnimation, lottieAnimate } = useAnimation(ref, true);
 

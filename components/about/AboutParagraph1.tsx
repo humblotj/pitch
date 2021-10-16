@@ -1,8 +1,9 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import styles from './AboutParagraph1.module.css';
 
-const AboutParagraph1 = () => {
+const AboutParagraph1: NextPage = () => {
   return (
     <div className={styles['about__paragraph1-wrapper']}>
       <p className={styles.about__paragraph1}>

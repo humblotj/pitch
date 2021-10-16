@@ -1,0 +1,117 @@
+.blog-recent {
+    display: flex;
+    overflow: hidden;
+    margin-top: 120px;
+    margin-bottom: 60px;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.blog-recent__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translate(0px, 300px);
+}
+
+.blog-recent__wrapper {
+    flex: 0 0 31%;
+}
+
+.blog-recent__image {
+    border-radius: 6px;
+}
+
+.blog-recent__heading {
+    transition: color 200ms ease;
+    font-size: 1.7em;
+    line-height: 1.7em;
+}
+
+.blog-recent__heading:hover {
+    color: #334ac0;
+}
+
+.blog-recent__paragraph {
+    font-size: 1.2em;
+    line-height: 1.9em;
+}
+
+.blog-recent__image-link {
+    margin-bottom: 22px;
+    transition: opacity 200ms ease;
+}
+
+.blog-recent__image-link:hover {
+    opacity: 0.8;
+}
+
+.blog-recent__heading-link {
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1920px) {
+    .blog-recent__heading {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .blog-recent__scrollable {
+        max-width: 100em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .blog-recent {
+        padding-right: 0vw;
+        padding-left: 0vw;
+    }
+    .blog-recent__container {
+        width: 145vw;
+        padding-right: 10vw;
+        padding-left: 10vw;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .blog-recent__scrollable {
+        overflow: auto;
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .blog-recent {
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+    .blog-recent__container {
+        width: 170vw;
+        padding-right: 4vw;
+        padding-left: 4vw;
+    }
+    .blog-recent__wrapper {
+        flex-basis: 19em;
+    }
+    .blog-recent__heading {
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+    .blog-recent__paragraph {
+        font-size: 1.1em;
+        line-height: 1.7em;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .blog-recent__container {
+        width: 240vw;
+    }
+}

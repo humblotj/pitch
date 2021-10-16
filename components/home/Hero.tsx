@@ -1,10 +1,11 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import styles from './Hero.module.css';
 import { useEffect, useRef } from 'react';
 import useAnimation from '../../hooks/useAnimation';
 
-const Hero = () => {
+const Hero: NextPage = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { animateFromTo } = useAnimation(ref);
 

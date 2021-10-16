@@ -1,0 +1,102 @@
+.blog-essential {
+    display: flex;
+    margin-top: 93px;
+    margin-bottom: 111px;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.blog-essential__container {
+    width: 100%;
+}
+
+.blog-essential__heading {
+    margin-bottom: 8px;
+}
+
+.divider-1184 {
+    height: 1px;
+    background-color: #dddfe5;
+}
+
+.blog-essential__wrapper {
+    display: grid;
+    margin-top: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.blog-essential__article {
+    width: auto;
+    opacity: 0;
+    transform: translate(0px, 170px);
+    text-decoration: none;
+}
+
+.blog-essential__article-nr {
+    margin-bottom: 20px;
+    font-family: Markpro, sans-serif;
+    color: #dddfe5;
+    font-size: 64px;
+    line-height: 60px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1280px) {
+    .blog-essential__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .blog-essential__article {
+        width: 50%;
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .blog-essential__container {
+        max-width: 100em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .blog-essential {
+        padding-right: 4vw;
+        padding-left: 4vw;
+    }
+    .blog-essential__wrapper {
+        grid-column-gap: 40px;
+    }
+    .blog-essential__article-nr {
+        font-size: 3em;
+        line-height: 1em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .blog-essential {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .blog-essential__wrapper {
+        display: block;
+    }
+    .blog-essential__article {
+        margin-bottom: 40px;
+    }
+    .blog-essential__article-heading {
+        font-size: 1.6em;
+        line-height: 1.5em;
+    }
+}

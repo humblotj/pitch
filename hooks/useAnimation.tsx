@@ -99,33 +99,34 @@ const useAnimation = (
 
   const animateFromTo = useCallback(
     (
-      className: string,
+      className: string | null,
       {
         from,
         to,
-        start,
-        end,
+        start = 0,
+        end = 0,
         duration,
         immediateRender = true,
         once = false,
         scrub = true,
-        toggleActions = undefined,
+        toggleActions = 'play none none none',
         bodySelector = false,
-        ...rest
-      }:
-        | {
-            from: gsap.TweenVars;
-            to: gsap.TweenVars;
-            start: number;
-            end: number;
-            duration?: number;
-            immediateRender?: boolean;
-            once?: boolean;
-            scrub?: boolean;
-            toggleActions?: string;
-            bodySelector: boolean;
-          }
-        | gsap.TweenVars,
+        stagger,
+        delay = 0,
+      }: {
+        from: gsap.TweenVars;
+        to: gsap.TweenVars;
+        start?: number;
+        end?: number;
+        duration?: number;
+        immediateRender?: boolean;
+        once?: boolean;
+        scrub?: boolean;
+        toggleActions?: string;
+        bodySelector?: boolean;
+        stagger?: number;
+        delay?: number;
+      },
     ) => {
       const element = ref ? ref.current : document.body;
       if (!element) {
@@ -144,9 +145,11 @@ const useAnimation = (
           }`
         : `+=${element.offsetHeight * ((Math.max(end, start) - start) / 100)}`;
 
-      const targets = (bodySelector ? document.body : element).querySelectorAll(
-        '.' + className,
-      );
+      const targets = className
+        ? (bodySelector ? document.body : element).querySelectorAll(
+            '.' + className,
+          )
+        : element;
       const vars = {
         ...to,
         immediateRender,
@@ -158,11 +161,14 @@ const useAnimation = (
           once,
           toggleActions,
         },
-        ...rest,
+        stagger,
+        delay,
       };
       if (duration) {
         vars.duration = duration;
       }
+
+      console.log(vars);
 
       gsap.fromTo(targets, from, vars);
     },
@@ -182,20 +188,21 @@ const useAnimation = (
         scrub = true,
         toggleActions = 'play none none none',
         bodySelector = false,
-        ...rest
-      }:
-        | {
-            to: gsap.TweenVars;
-            start?: number;
-            end?: number;
-            duration?: number;
-            immediateRender?: boolean;
-            once?: boolean;
-            scrub?: boolean;
-            toggleActions?: string;
-            bodySelector: boolean;
-          }
-        | gsap.TweenVars,
+        stagger,
+        delay,
+      }: {
+        to: gsap.TweenVars;
+        start?: number;
+        end?: number;
+        duration?: number;
+        immediateRender?: boolean;
+        once?: boolean;
+        scrub?: boolean;
+        toggleActions?: string;
+        bodySelector?: boolean;
+        stagger?: number;
+        delay?: number;
+      },
     ) => {
       const element = ref ? ref.current : document.body;
       if (!element) {
@@ -229,7 +236,8 @@ const useAnimation = (
           once,
           toggleActions,
         },
-        ...rest,
+        stagger,
+        delay,
       };
 
       if (duration) {

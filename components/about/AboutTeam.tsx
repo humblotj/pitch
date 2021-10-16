@@ -1,10 +1,11 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import styles from './AboutTeam.module.css';
 import Twitter from '../../assets/icons/twitter.svg';
 import Linkedin from '../../assets/icons/linkedin.svg';
 
-const AboutTeam = () => {
+const AboutTeam: NextPage = () => {
   return (
     <div className={styles.about__team}>
       <div className={styles['about__photos-grid']}>

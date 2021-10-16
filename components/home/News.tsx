@@ -1,12 +1,13 @@
-import cn from 'classnames';
+import type { NextPage } from 'next';
 
+import cn from 'classnames';
 import styles from './News.module.css';
 
 import CardButtonarrow from '../../assets/icons/card-buttonarrow.svg';
 import { useEffect, useRef } from 'react';
 import useAnimation from '../../hooks/useAnimation';
 
-const News = () => {
+const News: NextPage = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { animateTo } = useAnimation(ref, true);
 

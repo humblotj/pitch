@@ -1,8 +1,9 @@
+import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import styles from './AboutInvestors.module.css';
 
-const AboutInvestors = () => {
+const AboutInvestors: NextPage = () => {
   return (
     <div className={styles.about__investors}>
       <h2 className={styles['about__investors-heading']}>Our Investors</h2>

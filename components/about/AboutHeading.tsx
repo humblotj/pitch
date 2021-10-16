@@ -1,6 +1,7 @@
+import type { NextPage } from 'next';
 import styles from './AboutHeading.module.css';
 
-const AboutHeading = () => {
+const AboutHeading: NextPage = () => {
   return (
     <>
       <div className={styles['about__heading-wrapper']}>
