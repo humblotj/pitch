@@ -1,5 +1,6 @@
-import type { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
+import type { NextPage } from 'next';
+import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import cn from 'classnames';
@@ -9,12 +10,13 @@ import styles from './Nav.module.css';
 import Logo from '../../assets/icons/logo.svg';
 import DropdownArrow from '../../assets/icons/dropdown-arrow.svg';
 import IconExpand from '../../assets/icons/icon-expand.svg';
-import { useRouter } from 'next/dist/client/router';
+import NavDropdown from './NavDropdown';
 
 const Nav: NextPage = () => {
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const [dropDownOpen, setDropDownOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
     gsap.to(ref.current, {
@@ -28,6 +30,9 @@ const Nav: NextPage = () => {
     });
   }, []);
 
+  const toggleNav = () => setNavOpen((navOpen) => !navOpen);
+  const closeNav = () => setNavOpen(false);
+
   return (
     <>
       <div
@@ -40,14 +45,17 @@ const Nav: NextPage = () => {
           <Link href="/">
             <a
               aria-current={router.pathname === '/' && 'page'}
-              className={cn(styles.nav__logo, 'w-nav-brand', 'w--current')}
+              className={cn(styles.nav__logo, 'w-nav-brand')}
             >
               <div className={cn(styles['nav__logo-image'], 'w-embed')}>
                 <Logo />
               </div>
             </a>
           </Link>
-          <nav role="navigation" className={cn(styles.nav__menu, 'w-nav-menu')}>
+          <nav
+            role="navigation"
+            className={cn(styles.nav__menu, 'w-nav-menu', styles.nav_header)}
+          >
             <Link href="/">
               <a
                 aria-current={router.pathname === '/' && 'page'}
@@ -272,10 +280,14 @@ const Nav: NextPage = () => {
               Get early access
             </a>
           </div>
-          <button className={cn(styles.nav__mobilebutton, 'w-nav-button')}>
+          <button
+            className={cn(styles.nav__mobilebutton, 'w-nav-button')}
+            onClick={toggleNav}
+          >
             <span className={cn(styles.nav__mobileicon)}></span>
           </button>
         </div>
+        <NavDropdown isOpen={navOpen} closeNav={closeNav} />
       </div>
       <div ref={ref} className={styles['nav-shadow']}></div>
     </>

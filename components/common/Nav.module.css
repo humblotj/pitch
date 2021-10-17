@@ -23,7 +23,7 @@
     color: #334ac0;
 }
 
-.nav.nav--purple:not(.active) .nav__link-div, .nav.nav--purple:not(.active) .nav__link-div-jobstext, .nav.nav--purple:not(.active) .nav__link-learning, .nav.nav--purple:not(.active) .nav__link-wrapper-learning, .nav.nav--purple:not(.active) .nav__mobilebutton {
+.nav.nav--purple:not(.active) .nav_header>.nav__link-div, .nav.nav--purple:not(.active) .nav_header>div>.nav__link-div-jobstext, .nav.nav--purple:not(.active) .nav_header>div>div>.nav__link-learning, .nav.nav--purple:not(.active) .nav_header>div>.nav__link-wrapper-learning, .nav.nav--purple:not(.active) .nav__mobilebutton {
     color: #fff;
 }
 
@@ -335,7 +335,7 @@
 
 .w--current {
     border-bottom: 2px solid #334ac0;
-    color: #334ac0;
+    color: #334ac0!important;
 }
 
 .nav-shadow {
@@ -648,6 +648,17 @@
         background-color: #fff;
         box-shadow: 0 4px 26px 0 rgba(0, 0, 0, 0.12);
     }
+    .nav__menu:not(.nav_header) {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        overflow: visible;
+        min-width: 200px;
+        transform: translateY(-101%);
+    }
     .nav__mobilebutton {
         order: 3;
         color: #2b2a35;
@@ -697,6 +708,8 @@
         height: auto;
         padding: 1.6em 6vw 1.3em;
         border-top: 1px solid #dddfe5;
+        border-bottom: none!important;
+        margin-right: 0!important;
     }
     .nav__link-div:hover {
         border-bottom: 1px none #000;
@@ -771,6 +784,7 @@
         height: auto;
         padding: 1.6em 6vw 1.6em 10vw;
         border-top: 1px solid #dddfe5;
+        border-bottom: none!important;
     }
     .nav__link-div-onlymobile.nav__link-div--black.nav__link-div--space {
         margin-right: 0px;
