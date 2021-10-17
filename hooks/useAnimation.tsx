@@ -29,6 +29,40 @@ const useAnimation = (
     [],
   );
 
+  const getStart = useCallback(
+    (element: HTMLElement, start: number | string) => {
+      let animationStart = start;
+
+      if (typeof start === 'number') {
+        animationStart = animationStartEntering
+          ? `${
+              (element.offsetHeight + window.innerHeight) * (start / 100)
+            } bottom`
+          : `${start}% ${start}%`;
+      }
+      return animationStart;
+    },
+    [animationStartEntering],
+  );
+
+  const getEnd = useCallback(
+    (element: HTMLElement, start: number | string, end: number) => {
+      let animationEnd = '+=0';
+      if (typeof start === 'number') {
+        animationEnd = animationStartEntering
+          ? `+=${
+              (element.offsetHeight + window.innerHeight) *
+              ((Math.max(end, start) - start) / 100)
+            }`
+          : `+=${
+              element.offsetHeight * ((Math.max(end, start) - start) / 100)
+            }`;
+      }
+      return animationEnd;
+    },
+    [animationStartEntering],
+  );
+
   const lottieAnimate = useCallback(
     (
       animation: AnimationItem | undefined,
@@ -59,26 +93,8 @@ const useAnimation = (
         animation.loop = true;
       }
 
-      let animationStart = start;
-
-      if (typeof start === 'number') {
-        animationStart = animationStartEntering
-          ? `${
-              (element.offsetHeight + window.innerHeight) * (start / 100)
-            } bottom`
-          : `${start}% ${start}%`;
-      }
-      let animationEnd = '+=0';
-      if (typeof start === 'number') {
-        animationEnd = animationStartEntering
-          ? `+=${
-              (element.offsetHeight + window.innerHeight) *
-              ((Math.max(end, start) - start) / 100)
-            }`
-          : `+=${
-              element.offsetHeight * ((Math.max(end, start) - start) / 100)
-            }`;
-      }
+      const animationStart = getStart(element, start);
+      const animationEnd = getEnd(element, start, end);
 
       ScrollTrigger.create({
         trigger: element,
@@ -116,7 +132,7 @@ const useAnimation = (
       }: {
         from: gsap.TweenVars;
         to: gsap.TweenVars;
-        start?: number;
+        start?: number | string;
         end?: number;
         duration?: number;
         immediateRender?: boolean;
@@ -133,17 +149,8 @@ const useAnimation = (
         return;
       }
 
-      const animationStart = animationStartEntering
-        ? `${
-            (element.offsetHeight + window.innerHeight) * (start / 100)
-          } bottom`
-        : `${start}% ${start}%`;
-      const animationEnd = animationStartEntering
-        ? `+=${
-            (element.offsetHeight + window.innerHeight) *
-            ((Math.max(end, start) - start) / 100)
-          }`
-        : `+=${element.offsetHeight * ((Math.max(end, start) - start) / 100)}`;
+      const animationStart = getStart(element, start);
+      const animationEnd = getEnd(element, start, end);
 
       const targets = className
         ? (bodySelector ? document.body : element).querySelectorAll(
@@ -168,7 +175,7 @@ const useAnimation = (
         vars.duration = duration;
       }
 
-      gsap.fromTo(targets, from, vars);
+      return gsap.fromTo(targets, from, vars);
     },
     [ref, animationStartEntering],
   );
@@ -190,7 +197,7 @@ const useAnimation = (
         delay,
       }: {
         to: gsap.TweenVars;
-        start?: number;
+        start?: number | string;
         end?: number;
         duration?: number;
         immediateRender?: boolean;
@@ -207,17 +214,8 @@ const useAnimation = (
         return;
       }
 
-      const animationStart = animationStartEntering
-        ? `${
-            (element.offsetHeight + window.innerHeight) * (start / 100)
-          } bottom`
-        : `${start}% ${start}%`;
-      const animationEnd = animationStartEntering
-        ? `+=${
-            (element.offsetHeight + window.innerHeight) *
-            ((Math.max(end, start) - start) / 100)
-          }`
-        : `+=${element.offsetHeight * ((Math.max(end, start) - start) / 100)}`;
+      const animationStart = getStart(element, start);
+      const animationEnd = getEnd(element, start, end);
 
       const targets = (bodySelector ? document.body : element).querySelectorAll(
         '.' + className,

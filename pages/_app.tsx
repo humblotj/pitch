@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 import '../styles/globals.css';
+import Nav from '../components/common/Nav';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -47,6 +48,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <meta name="robots" content="noindex"></meta>
       </Head>
+      <Nav />
       <Component {...pageProps} />
     </>
   );

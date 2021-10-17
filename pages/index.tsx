@@ -8,7 +8,6 @@ import Formating from '../components/home/Formating';
 import Hero from '../components/home/Hero';
 import Integrations from '../components/home/Integrations';
 import Intro from '../components/home/Intro';
-import Nav from '../components/common/Nav';
 import News from '../components/home/News';
 import Sharing from '../components/home/Sharing';
 import Testimonials from '../components/home/Testimonials';
@@ -22,7 +21,6 @@ const Home: NextPage = () => {
         <meta property="og:description" content="Clone Website" />
         <meta property="og:title" content="Pitch | Home" />
       </Head>
-      <Nav />
       <Hero />
       <Intro />
       <Decks />

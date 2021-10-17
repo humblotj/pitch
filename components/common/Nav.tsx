@@ -30,7 +30,12 @@ const Nav: NextPage = () => {
 
   return (
     <>
-      <div role="banner" className={cn(styles.nav, 'w-nav')}>
+      <div
+        role="banner"
+        className={cn(styles.nav, 'w-nav', {
+          [styles['nav--purple']]: router.pathname === '/about',
+        })}
+      >
         <div className={cn(styles.nav__container, 'w-container')}>
           <Link href="/">
             <a
@@ -222,7 +227,6 @@ const Nav: NextPage = () => {
                 href="#"
                 className={cn(
                   styles['nav__link-div-jobstext'],
-                  styles['nav__link-div-jobs--black'],
                   'w-inline-block',
                 )}
               >
@@ -268,7 +272,7 @@ const Nav: NextPage = () => {
               Get early access
             </a>
           </div>
-          <button className={cn(styles.nav__mobilebutton)}>
+          <button className={cn(styles.nav__mobilebutton, 'w-nav-button')}>
             <span className={cn(styles.nav__mobileicon)}></span>
           </button>
         </div>

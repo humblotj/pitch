@@ -1,7 +1,10 @@
+import { useEffect, useRef } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import cn from 'classnames';
 
+import navStyles from '../../components/common/Nav.module.css';
 import styles from './About.module.css';
 import AboutCulture from '../../components/about/AboutCulture';
 import AboutHeading from '../../components/about/AboutHeading';
@@ -13,11 +16,21 @@ import AboutNumbers from '../../components/about/AboutNumbers';
 import AboutParagraph1 from '../../components/about/AboutParagraph1';
 import AboutParagraph2 from '../../components/about/AboutParagraph2';
 import AboutTeam from '../../components/about/AboutTeam';
-import Nav from '../../components/common/Nav';
 import Cta from '../../components/common/Cta';
 import Footer from '../../components/common/Footer';
 
 const About: NextPage = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: ref.current,
+      start: '-800',
+      toggleActions: 'play none none reset',
+      toggleClass: { targets: '.w-nav', className: navStyles.active },
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -26,9 +39,8 @@ const About: NextPage = () => {
         <meta property="og:description" content="Clone Website" />
         <meta property="og:title" content="Pitch | About" />
       </Head>
-      <Nav />
       <AboutHero />
-      <div className={cn(styles['div-animated'], 'div-animated')}>
+      <div ref={ref} className={cn(styles['div-animated'], 'div-animated')}>
         <AboutIntro />
         <div className={cn(styles.about, 'wf-section')}>
           <AboutHeading />
