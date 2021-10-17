@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import cn from 'classnames';
 
 import styles from './About.module.css';
@@ -19,6 +20,12 @@ import Footer from '../../components/common/Footer';
 const About: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Pitch | About</title>
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Clone Website" />
+        <meta property="og:title" content="Pitch | About" />
+      </Head>
       <Nav />
       <AboutHero />
       <div className={cn(styles['div-animated'], 'div-animated')}>

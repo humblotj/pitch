@@ -17,7 +17,6 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <title>Pitch | Home</title>
         <meta property="og:type" content="website" />
         <meta property="og:description" content="Clone Website" />
